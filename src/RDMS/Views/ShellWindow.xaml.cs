@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RDMS.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace RDMS.Views
         public ShellWindow()
         {
             InitializeComponent();
+            DataContext = App.Current.Services?.GetService(typeof(ShellViewModel));
         }
     }
 }
