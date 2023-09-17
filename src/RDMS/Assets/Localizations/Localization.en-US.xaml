@@ -1,4 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    <!--Common-->
+    <system:String x:Key="COMMON_EXPLORE">...</system:String>
+    <system:String x:Key="COMMON_GO_BACK">Back</system:String>
+    <system:String x:Key="COMMON_GO_FORWARD">Forward</system:String>
+    <system:String x:Key="COMMON_CANCEL">Cancel</system:String>
+    <system:String x:Key="COMMON_CONFIRM">Confirm</system:String>
+    <system:String x:Key="COMMON_NO">No</system:String>
+    <system:String x:Key="COMMON_YES">Yes</system:String>
+    <system:String x:Key="COMMON_CLOSE">Close</system:String>
+    <system:String x:Key="COMMON_COMPLETE">Complete</system:String>
 </ResourceDictionary>
