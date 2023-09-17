@@ -1,4 +1,33 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+    <Color x:Key="AldiemesBackgroundColor">#FFffffff</Color>
+    <SolidColorBrush x:Key="AldiemesBackground" Color="{DynamicResource AldiemesBackgroundColor}" />
+    <Color x:Key="AldiemesSecondaryBackgroundColor">#FFfafafa</Color>
+    <SolidColorBrush x:Key="AldiemesSecondaryBackground" Color="{DynamicResource AldiemesSecondaryBackgroundColor}" />
+    <Color x:Key="AldiemesPopupBoxBackgroundColor">#FFF5F5F5</Color>
+    <SolidColorBrush x:Key="AldiemesPopupBoxBackground" Color="{DynamicResource AldiemesPopupBoxBackgroundColor}" />
+    <Color x:Key="AldiemesProgressBarBackgroundColor">#1F000000</Color>
+    <SolidColorBrush x:Key="AldiemesProgressBarBackground" Color="{DynamicResource AldiemesProgressBarBackgroundColor}" />
+    <Color x:Key="AldiemesCommandBarBackgroundColor">#ffeeeeee</Color>
+    <SolidColorBrush x:Key="AldiemesCommandBarBackground" Color="{DynamicResource AldiemesDialogCommandBarBackgroundColor}" />
+
+    <Color x:Key="AldiemesButtonHoverColor">#FFDeDeDe</Color>
+    <SolidColorBrush x:Key="AldiemesButtonHover" Color="{DynamicResource AldiemesButtonHoverColor}" />
+    <Color x:Key="AldiemesButtonRippleColor">#FFB6B6B6</Color>
+    <SolidColorBrush x:Key="AldiemesButtonRipple" Color="{DynamicResource AldiemesButtonRippleColor}" />
+
+    <Color x:Key="AldiemesForegroundUltraLightColor">#FF717171</Color>
+    <SolidColorBrush x:Key="AldiemesForegroundUltraLight" Color="{DynamicResource AldiemesForegroundUltraLightColor}" />
+    <Color x:Key="AldiemesForegroundLightColor">#BB000000</Color>
+    <SolidColorBrush x:Key="AldiemesForegroundLight" Color="{DynamicResource AldiemesForegroundLightColor}" />
+    <Color x:Key="AldiemesForegroundColor">#CC000000</Color>
+    <SolidColorBrush x:Key="AldiemesForeground" Color="{DynamicResource AldiemesForegroundColor}" />
+
+    <Color x:Key="AldiemesContrastForegroundColor">#DDFFFFFF</Color>
+    <SolidColorBrush x:Key="AldiemesContrastForeground" Color="{DynamicResource AldiemesContrastForegroundColor}" />
+
+    <Color x:Key="AldiemesDividerColor">#1F000000</Color>
+    <SolidColorBrush x:Key="AldiemesDivider" Color="{DynamicResource AldiemesDividerColor}" />
+    <Color x:Key="AldiemesDividerLightColor">#0F000000</Color>
+    <SolidColorBrush x:Key="AldiemesDividerLight" Color="{DynamicResource AldiemesDividerLightColor}" />
 </ResourceDictionary>

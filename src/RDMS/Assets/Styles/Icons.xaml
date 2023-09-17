@@ -1,4 +1,54 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+    <DrawingImage x:Key="Favicon">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V1000 H1000 V0 H0 Z">
+                <DrawingGroup Opacity="1">
+                    <GeometryDrawing Geometry="F1 M1000,1000z M0,0z M715,782.28L715,782.26 278,498.68 786,169.02 786,660.53 725,620.95 725,286.83 397,499.68 673.09,678.84 673.08,678.85 786,752.12 786,752.14 867,804.7 867,23.69 133,500 867,976.31 867,880.92 715,782.28z M649,571.61L538,499.58 649,427.55 649,571.61z">
+                        <GeometryDrawing.Brush>
+                            <LinearGradientBrush StartPoint="394.8246,823.3264" EndPoint="1071.0808,275.7049" MappingMode="Absolute" SpreadMethod="Pad" Opacity="1">
+                                <GradientStop Color="#FF8E2DE2" Offset="0" />
+                                <GradientStop Color="#FF892ADF" Offset="0.22149999999999997" />
+                                <GradientStop Color="#FF7A20D8" Offset="0.48729999999999996" />
+                                <GradientStop Color="#FF6210CC" Offset="0.77469999999999994" />
+                                <GradientStop Color="#FF4A00C0" Offset="1" />
+                            </LinearGradientBrush>
+                        </GeometryDrawing.Brush>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="WindowCloseIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource AldiemesForegroundLight}" Geometry="F1 M24,24z M0,0z M13.46,12L19,17.54 19,19 17.54,19 12,13.46 6.46,19 5,19 5,17.54 10.54,12 5,6.46 5,5 6.46,5 12,10.54 17.54,5 19,5 19,6.46 13.46,12z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="WindowMaximizeIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource AldiemesForegroundLight}" Geometry="F1 M24,24z M0,0z M4,4L20,4 20,20 4,20 4,4 M6,8L6,18 18,18 18,8 6,8z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="WindowRestoreIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource AldiemesForegroundLight}" Geometry="F1 M24,24z M0,0z M4,8L8,8 8,4 20,4 20,16 16,16 16,20 4,20 4,8 M16,8L16,14 18,14 18,6 10,6 10,8 16,8 M6,12L6,18 14,18 14,12 6,12z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="WindowMinimizeIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource AldiemesForegroundLight}" Geometry="F1 M24,24z M0,0z M20,14L4,14 4,10 20,10" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
 </ResourceDictionary>
