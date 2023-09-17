@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace RDMS.Helpers
 {
-    internal class LocalizationHelper
+    internal static class LocalizationHelper
     {
+        internal static string GetText(string key)
+        {
+            return (string?)App.Current.Resources[key] ?? "NULL";
+        }
     }
 }
