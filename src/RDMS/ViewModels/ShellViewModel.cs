@@ -31,7 +31,7 @@ namespace RDMS.ViewModels
         private void Initialize()
         {
             // Sets the start-up page.
-            NavigationSource = "";
+            NavigationSource = "./Views/Pages/DashboardPage.xaml";
 
             // Subscribes the messenger to get navigation messages.
             WeakReferenceMessenger.Default.Register<NavigationMessage>(this, OnNavigationMessageReceived);
