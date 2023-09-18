@@ -9,6 +9,7 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,33 +37,12 @@ namespace RDMS
         /// </summary>
         public App()
         {
-            ConfigureLocalization();
             ConfigureLogging();
             ConfigureServices();
+
             InitializeComponent();
-        }
 
-        /// <summary>
-        /// Configures localization settings.
-        /// </summary>
-        private void ConfigureLocalization()
-        {
-            ResourceDictionary dict = new ResourceDictionary();
-
-            switch (Thread.CurrentThread.CurrentCulture.Name)
-            {
-                case "en-US":
-                    dict.Source = new Uri(@".\Assets\Localizations\Localization.en-US.xaml", UriKind.Relative);
-                    break;
-                case "ko-KR":
-                    dict.Source = new Uri(@".\Assets\Localizations\Localization.ko-KR.xaml", UriKind.Relative);
-                    break;
-                default:
-                    dict.Source = new Uri(@".\Assets\Localizations\Localization.en-US.xaml", UriKind.Relative);
-                    break;
-            }
-
-            App.Current.Resources.MergedDictionaries.Add(dict);
+            LoadLocalizationResources();
         }
 
         /// <summary>
@@ -95,6 +75,52 @@ namespace RDMS
             services.AddTransient(typeof(ShellViewModel));
 
             Services = services.BuildServiceProvider();
+        }
+
+        /// <summary>
+        /// Loads localization resources.
+        /// </summary>
+        private void LoadLocalizationResources()
+        {
+            LoadLocalizationResources(string.Empty);
+        }
+
+        /// <summary>
+        /// Loads localization resources.
+        /// </summary>
+        private void LoadLocalizationResources(string culture)
+        {
+            // If localization resources already exist, remove them.
+            var currentDict = App.Current.Resources.MergedDictionaries
+                .FirstOrDefault(dict => dict.Source != null && Path.GetFileName(dict.Source.OriginalString).StartsWith("Localization", StringComparison.OrdinalIgnoreCase));
+
+            if (currentDict != null)
+            {
+                App.Current.Resources.Remove(currentDict);
+            }
+
+            // Add new localization resources.
+            var dict = new ResourceDictionary();
+
+            if (string.IsNullOrEmpty(culture))
+            {
+                culture = Thread.CurrentThread.CurrentUICulture.Name;
+            }
+
+            switch (culture)
+            {
+                case "en-US":
+                    dict.Source = new Uri(@"pack://application:,,,/Assets/Localizations/Localization.en-US.xaml", UriKind.Absolute);
+                    break;
+                case "ko-KR":
+                    dict.Source = new Uri(@"pack://application:,,,/Assets/Localizations/Localization.ko-KR.xaml", UriKind.Absolute);
+                    break;
+                default:
+                    dict.Source = new Uri(@"pack://application:,,,/Assets/Localizations/Localization.en-US.xaml", UriKind.Absolute);
+                    break;
+            }
+
+            App.Current.Resources.MergedDictionaries.Add(dict);
         }
     }
 }
