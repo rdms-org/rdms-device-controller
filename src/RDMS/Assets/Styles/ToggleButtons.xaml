@@ -62,7 +62,7 @@
                             <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="ToggleContentPresenter" Property="Opacity" Value=".40"/>
+                            <Setter TargetName="ToggleBackgroundBorder" Property="Opacity" Value=".40"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -132,7 +132,7 @@
                             <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="ToggleContentPresenter" Property="Opacity" Value=".40"/>
+                            <Setter TargetName="ToggleBackgroundBorder" Property="Opacity" Value=".40"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

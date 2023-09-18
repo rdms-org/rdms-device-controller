@@ -37,7 +37,8 @@
 
                 <StackPanel Grid.Row="0" Orientation="Vertical">
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0" IsChecked="False"
-                                 ToolTip="{DynamicResource SHELL_SIDENAV_NOTICE}">
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_NOTICE}"
+                                 IsEnabled="False">
                         <StackPanel>
                             <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="NotificationsNone"/>
                             <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
@@ -49,7 +50,8 @@
                     <Separator Foreground="{DynamicResource AldiemesDividerLight}" Margin="16 0 16 0" Opacity=".50"/>
 
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 8 8 8" Padding="0" IsChecked="True"
-                                 ToolTip="{DynamicResource SHELL_SIDENAV_STATUS}">
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_STATUS}"
+                                 IsEnabled="False">
                         <StackPanel>
                             <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="ViewDashboardVariantOutline"/>
                             <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
@@ -59,7 +61,8 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0" IsChecked="False"
-                                 ToolTip="{DynamicResource SHELL_SIDENAV_SCHEDULE}">
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_SCHEDULE}"
+                                 IsEnabled="False">
                         <StackPanel>
                             <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="Calendar"/>
                             <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
@@ -69,7 +72,8 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0" IsChecked="False"
-                                 ToolTip="{DynamicResource SHELL_SIDENAV_CHECKER}">
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_CHECKER}"
+                                 IsEnabled="False">
                         <StackPanel>
                             <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="CheckAll"/>
                             <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
@@ -93,11 +97,24 @@
             </Grid>
 
             <Border Grid.Column="1" Background="{DynamicResource AldiemesSecondaryBackground}" CornerRadius="16 0 0 0">
-                <Frame NavigationUIVisibility="Hidden">
-                    <i:Interaction.Behaviors>
-                        <behaviors:FrameBehavior NavigationSource="{Binding NavigationSource, Mode=TwoWay}" />
-                    </i:Interaction.Behaviors>
-                </Frame>
+                <Grid>
+                    <Frame NavigationUIVisibility="Hidden">
+                        <i:Interaction.Behaviors>
+                            <behaviors:FrameBehavior NavigationSource="{Binding NavigationSource, Mode=TwoWay}" />
+                        </i:Interaction.Behaviors>
+                    </Frame>
+
+                    <materialDesign:DialogHost OverlayBackground="{DynamicResource AldiemesForeground}" DialogTheme="Light"
+                                               CloseOnClickAway="False" Placement="Center"
+                                               ClipToBounds="True" CornerRadius="16 0 0 0"
+                                               IsOpen="True">
+                        <materialDesign:DialogHost.DialogContent>
+                            <Grid Margin="30">
+                                <TextBlock Text="Test"/>
+                            </Grid>
+                        </materialDesign:DialogHost.DialogContent>
+                    </materialDesign:DialogHost>
+                </Grid>
             </Border>
         </Grid>
     </Grid>
