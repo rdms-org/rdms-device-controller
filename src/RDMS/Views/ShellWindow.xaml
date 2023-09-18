@@ -104,13 +104,40 @@
                         </i:Interaction.Behaviors>
                     </Frame>
 
-                    <materialDesign:DialogHost OverlayBackground="{DynamicResource AldiemesForeground}" DialogTheme="Light"
-                                               CloseOnClickAway="False" Placement="Center"
-                                               ClipToBounds="True" CornerRadius="16 0 0 0"
+                    <materialDesign:DialogHost DialogTheme="Light" CornerRadius="16 0 0 0" CloseOnClickAway="False" Placement="Center" DialogContentUniformCornerRadius="24"
+                                               materialDesign:ElevationAssist.Elevation="Dp12"
                                                IsOpen="True">
                         <materialDesign:DialogHost.DialogContent>
-                            <Grid Margin="30">
-                                <TextBlock Text="Test"/>
+                            <Grid Margin="20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Height="240" Width="400">
+                                    <StackPanel Orientation="Vertical" Margin="40">
+                                        <materialDesign:PackIcon HorizontalAlignment="Center" Width="24" Height="24" Opacity=".68" Kind="PasswordOutline"/>
+                                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" HorizontalAlignment="Center" Text="OTP 인증"/>
+
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 24 0 0">
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource AldiemesDivider}" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource AldiemesDivider}" Margin="8 0 0 0" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource AldiemesDivider}" Margin="8 0 0 0" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource PrimaryHueMidBrush}" Margin="8 0 0 0" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                        </StackPanel>
+
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 8 0 0" HorizontalAlignment="Center" Opacity=".68" Text="관리자 UI에 표시 된 OTP 인증번호를 입력하십시오." />
+                                    </StackPanel>
+                                </Grid>
+
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Style="{StaticResource MaterialDesignOutlinedButton}" Height="36" materialDesign:ButtonAssist.CornerRadius="18" Content="취소"/>
+                                    <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" Margin="8 0 0 0" Height="36" materialDesign:ButtonAssist.CornerRadius="18" Content="인증"/>
+                                </StackPanel>
                             </Grid>
                         </materialDesign:DialogHost.DialogContent>
                     </materialDesign:DialogHost>
