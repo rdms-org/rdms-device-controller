@@ -21,6 +21,7 @@
                 <ResourceDictionary Source="pack://application:,,,/RDMS;component/Assets/Styles/Brushes.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/RDMS;component/Assets/Styles/Buttons.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/RDMS;component/Assets/Styles/Icons.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/RDMS;component/Assets/Styles/ToggleButtons.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/RDMS;component/Assets/Styles/Windows.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

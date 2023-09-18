@@ -11,4 +11,13 @@
     <system:String x:Key="COMMON_YES">Yes</system:String>
     <system:String x:Key="COMMON_CLOSE">Close</system:String>
     <system:String x:Key="COMMON_COMPLETE">Complete</system:String>
+
+    <!--Shell-->
+    <system:Double x:Key="SHELL_SIDENAV_FONT_SIZE">10</system:Double>
+    <system:String x:Key="SHELL_SIDENAV_NOTICE">Notice</system:String>
+    <system:String x:Key="SHELL_SIDENAV_STATUS">Status</system:String>
+    <system:String x:Key="SHELL_SIDENAV_SCHEDULE">Schedule</system:String>
+    <system:String x:Key="SHELL_SIDENAV_CHECKER">Checker</system:String>
+    <system:String x:Key="SHELL_SIDENAV_OTP_AUTH">OTP Authentication</system:String>
+    <system:String x:Key="SHELL_SIDENAV_SETTINGS">Settings</system:String>
 </ResourceDictionary>
