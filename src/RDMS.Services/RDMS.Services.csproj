@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-RDMS.Services-8adc75fa-f634-4f90-8aed-9c701773ac1d</UserSecretsId>
+    <UserSecretsId>dotnet-RDMS.Services-43acac91-c7e0-4419-850a-8540704c050c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
