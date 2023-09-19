@@ -1,23 +1,62 @@
-name: Build binaries
+name: Build Binaries
 
 on:
   workflow_dispatch:
     inputs:
+      product-version:
+        description: 'RDMS DEVCON Product Version'
+        required: true
+        default: '1.0.0'
+        type: string
       ui-version:
         description: 'RDMS DEVCON UI Version'
         required: true
         default: '1.0.0'
         type: string
       svc-version:
-        description: 'RDMS DEVCON SVC Version'
+        description: 'RDMS DEVCON Services Version'
         required: true
         default: '1.0.0'
         type: string
+      release-build-outputs:
+        description: 'Release Build Outputs'
+        required: true
+        default: false
+        type: boolean
+      package-components:
+        description: 'Package Components'
+        required: true
+        default: false
+        type: boolean
 
 jobs:
   build:
     name: Build
     runs-on: windows-2022
+    env:
+      BUILD_OPTIONS_UI: >
+        -productName "RDMS"
+        -productVersion "${{ inputs.product-version }}"
+        -fileDesc "RDMS Device Controller UI"
+        -fileVersion "${{ inputs.ui-version }}"
+        -company "RDMS Project"
+        -copyright "Copyright (c) 2023 RDMS Project Contributors all rights reserved."
+        --framework net7.0
+        --configuration Release
+        -p:PublishReadyToRun=true
+        -excludeSymbols $True
+      BUILD_OPTIONS_SVC: >
+        -productName "RDMS"
+        -productVersion "${{ inputs.product-version }}"
+        -fileDesc "RDMS Device Controller Services"
+        -fileVersion "${{ inputs.svc-version }}"
+        -company "RDMS Project"
+        -copyright "Copyright (c) 2023 RDMS Project Contributors all rights reserved."
+        --framework net7.0
+        --configuration Release
+        -p:PublishReadyToRun=true
+        -p:PublishSingleFile=true
+        -excludeSymbols $True
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -27,123 +66,92 @@ jobs:
         with:
           dotnet-version: '7.0.x'
         
-      - name: Build for x64
+      - name: Build RDMS Device Controller UI
         run: |
-          ./scripts/publish.ps1 -target ToyboxImageConverter/ToyboxImageConverter.csproj -publishprofile x64.pubxml -productName "${{ inputs.product-name }}" -productVersion "${{ inputs.product-version }}" -fileDesc "${{ inputs.file-desc }}" -fileVersion "${{ inputs.file-version }}" -company "${{ inputs.company }}" -copyright "${{ inputs.copyright }}" -excludeSymbols $${{ inputs.remove-debug-symbols }}
+          ./tools/publish.ps1 -target RDMS/RDMS.csproj $BUILD_OPTIONS_UI --runtime win-x86 --output ../../builds/x86/
+          ./tools/publish.ps1 -target RDMS/RDMS.csproj $BUILD_OPTIONS_UI --runtime win-x64 --output ../../builds/x64/
         shell: pwsh
         
-      - name: Build for ARM64
+      - name: Build RDMS Device Controller Services
         run: |
-          ./scripts/publish.ps1 -target ToyboxImageConverter/ToyboxImageConverter.csproj -publishprofile arm64.pubxml -productName "${{ inputs.product-name }}" -productVersion "${{ inputs.product-version }}" -fileDesc "${{ inputs.file-desc }}" -fileVersion "${{ inputs.file-version }}" -company "${{ inputs.company }}" -copyright "${{ inputs.copyright }}" -excludeSymbols $${{ inputs.remove-debug-symbols }}
+          ./tools/publish.ps1 -target RDMS.Services/RDMS.Services.csproj $BUILD_OPTIONS_UI --runtime win-x86 --output ../../builds/x86/
+          ./tools/publish.ps1 -target RDMS.Services/RDMS.Services.csproj $BUILD_OPTIONS_UI --runtime win-x64 --output ../../builds/x64/
         shell: pwsh
         
-      - name: Copy licenses
+      - name: Copy Documentations
         run: |
-          New-Item -Path "./src/ToyboxImageConverter/bin/publish/x64" -Name "docs" -ItemType "directory"
-          New-Item -Path "./src/ToyboxImageConverter/bin/publish/arm64" -Name "docs" -ItemType "directory"
-          Copy-Item -Path "./docs/*" -Destination "./src/ToyboxImageConverter/bin/publish/x64/docs"
-          Copy-Item -Path "./docs/*" -Destination "./src/ToyboxImageConverter/bin/publish/arm64/docs"
+          New-Item -Path "./builds/x86" -Name "docs" -ItemType "directory"
+          New-Item -Path "./builds/x64" -Name "docs" -ItemType "directory"
+          Copy-Item -Path "./docs/*" -Destination "./builds/x86/docs/"
+          Copy-Item -Path "./docs/*" -Destination "./builds/x64/docs/"
         shell: pwsh
         
-      - name: Compress build outputs
+      - name: Compress Build Outputs
         run: |
-          Compress-Archive -Path ./src/ToyboxImageConverter/bin/publish/x64/* -DestinationPath ./x64.zip -Force
-          Compress-Archive -Path ./src/ToyboxImageConverter/bin/publish/arm64/* -DestinationPath ./arm64.zip -Force
+          Compress-Archive -Path ./builds/x86/* -DestinationPath ./x86.zip -Force
+          Compress-Archive -Path ./builds/x64/* -DestinationPath ./x64.zip -Force
         shell: pwsh
         
-      - name: Download VIPS
-        uses: robinraju/release-downloader@v1.7
-        with:
-          repository: "project-toybox/toybox-vips"
-          latest: true
-          fileName: "*.zip"
-          
-      - name: Decompress and copy VIPS
-        run: |
-          New-Item -Path "./" -Name "vips-x64" -ItemType "directory"
-          New-Item -Path "./" -Name "vips-arm64" -ItemType "directory"
-          Expand-Archive -Path "./vips-dev-w64-all-*-hevc.zip" -DestinationPath "./vips-x64"
-          Expand-Archive -Path "./vips-dev-arm64-all-*-hevc.zip" -DestinationPath "./vips-arm64"
-          Copy-Item -Path "./vips-x64/vips-dev-*/bin/*" -Destination "./src/ToyboxImageConverter/bin/publish/x64/" -Recurse
-          Copy-Item -Path "./vips-arm64/vips-dev-*/bin/*" -Destination "./src/ToyboxImageConverter/bin/publish/arm64/" -Recurse
-        shell: pwsh
-        
-      - name: Compress build outputs with VIPS
-        run: |
-          Compress-Archive -Path ./src/ToyboxImageConverter/bin/publish/x64/* -DestinationPath ./x64-with-vips.zip -Force
-          Compress-Archive -Path ./src/ToyboxImageConverter/bin/publish/arm64/* -DestinationPath ./arm64-with-vips.zip -Force
-        shell: pwsh   
-        
-      - name: Upload build outputs
+      - name: Upload Build Outputs
         uses: actions/upload-artifact@v3
         with:
           name: build-outputs
           path: |
+            ./x86.zip
             ./x64.zip
-            ./arm64.zip
-            ./x64-with-vips.zip
-            ./arm64-with-vips.zip
             
   
   release:
     needs: build
     name: Release to GitHub
+    if: inputs.release-build-outputs == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Download build outputs
+      - name: Download Build Outputs
         uses: actions/download-artifact@v3
         with:
           name: build-outputs
           
       - id: create-release
-        name: Create a release
+        name: Create a Release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ inputs.file-version }}
-          release_name: v${{ inputs.file-version }}
+          tag_name: v${{ inputs.product-version }}
+          release_name: v${{ inputs.product-version }}
           draft: false
           prerelease: false
           
-      - name: Upload the x64 build output
+      - name: Release x86 Build Outputs
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-release.outputs.upload_url }}
+          asset_path: ./x86.zip
+          asset_name: rdms-device-controller-x86-${{ inputs.product-version }}.zip
+          asset_content_type: application/zip
+
+      - name: Release x64 Build Outputs
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
           asset_path: ./x64.zip
-          asset_name: toybox-image-converter-w64-${{ inputs.file-version }}.zip
+          asset_name: rdms-device-controller-x64-${{ inputs.product-version }}.zip
           asset_content_type: application/zip
-          
-      - name: Upload the ARM64 build output
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: ./arm64.zip
-          asset_name: toybox-image-converter-arm64-${{ inputs.file-version }}.zip
-          asset_content_type: application/zip
-          
-      - name: Upload the x64(with VIPS) build output
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: ./x64-with-vips.zip
-          asset_name: toybox-image-converter-with-vips-w64-${{ inputs.file-version }}.zip
-          asset_content_type: application/zip
-          
-      - name: Upload the ARM64(with VIPS) build output
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create-release.outputs.upload_url }}
-          asset_path: ./arm64-with-vips.zip
-          asset_name: toybox-image-converter-with-vips-arm64-${{ inputs.file-version }}.zip
-          asset_content_type: application/zip
+
+
+  package:
+    needs: build
+    name: Package Components
+    if: inputs.package-components == true
+    uses: ./.github/workflows/package.yml
+    with:
+      product-version: inputs.product-version
+      ui-version: inputs.ui-version
+      svc-version: inputs.svc-version
