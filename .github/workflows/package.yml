@@ -1,0 +1,22 @@
+name: Package Components
+
+on: 
+  workflow_call:
+    inputs:
+      product-version:
+        type: string
+        required: true
+      ui-version:
+        type: string
+        required: true
+      svc-version:
+        type: string
+        required: true
+
+jobs:
+  package:
+    name: Package
+    runs-on: windows-2022
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
