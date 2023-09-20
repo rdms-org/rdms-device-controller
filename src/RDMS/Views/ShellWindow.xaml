@@ -73,16 +73,36 @@
                                        Text="{DynamicResource SHELL_SIDENAV_SCHEDULE}"/>
                         </StackPanel>
                     </RadioButton>
+
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 4" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_REPORT}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Report}">
+                        <StackPanel>
+                            <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="ChartBar"/>
+                            <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
+                                       Text="{DynamicResource SHELL_SIDENAV_REPORT}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <Separator Foreground="{DynamicResource AldiemesDividerLight}" Margin="16 0 16 0" Opacity=".20"/>
+
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 4 8 8" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_MANAGER}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Manager}">
+                        <StackPanel>
+                            <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="Tools"/>
+                            <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
+                                       Text="{DynamicResource SHELL_SIDENAV_MANAGER}"/>
+                        </StackPanel>
+                    </RadioButton>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0 10 0 10">
                     <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36"
-                            IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
-                            ToolTip="{DynamicResource SHELL_SIDENAV_OTP_AUTH}">
-                        <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="KeyOutline" />
-                    </Button>
-
-                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36" Margin="0 6 0 0"
                             IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                             ToolTip="{DynamicResource SHELL_SIDENAV_SETTINGS}">
                         <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="SettingsOutline" />

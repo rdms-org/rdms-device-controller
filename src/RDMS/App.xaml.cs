@@ -74,9 +74,12 @@ namespace RDMS
         {
             var services = new ServiceCollection();
             services.AddSingleton(typeof(ShellViewModel));
+            services.AddSingleton(typeof(AlertViewModel));
+            services.AddSingleton(typeof(ManagerViewModel));
             services.AddSingleton(typeof(NotificationViewModel));
             services.AddSingleton(typeof(StatusViewModel));
             services.AddSingleton(typeof(ScheduleViewModel));
+            services.AddSingleton(typeof(ReportViewModel));
 
             Services = services.BuildServiceProvider();
         }

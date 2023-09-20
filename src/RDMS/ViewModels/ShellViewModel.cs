@@ -14,9 +14,12 @@ namespace RDMS.ViewModels
 {
     public enum NavigationTab
     {
+        Alert,
         Notification,
         Status,
-        Schedule
+        Schedule,
+        Report,
+        Manager
     }
 
     public class ShellViewModel : ViewModelBase
@@ -37,7 +40,7 @@ namespace RDMS.ViewModels
             set
             {
                 SetProperty(ref _navigationTab, value);
-                UpdatePage();
+                SyncronizeNavigationFrame();
             }
         }
 
@@ -69,7 +72,7 @@ namespace RDMS.ViewModels
             });
         }
 
-        private void UpdatePage()
+        private void SyncronizeNavigationFrame()
         {
             string source = string.Empty;
 
@@ -84,12 +87,17 @@ namespace RDMS.ViewModels
                 case NavigationTab.Schedule:
                     source = "./Views/Pages/SchedulePage.xaml";
                     break;
+                case NavigationTab.Report:
+                    source = "./Views/Pages/ReportPage.xaml";
+                    break;
+                case NavigationTab.Manager:
+                    source = "./Views/Pages/ManagerPage.xaml";
+                    break;
                 default:
-                    source = "./Views/Pages/NotificationPage.xaml";
+                    source = "./Views/Pages/AlertPage.xaml";
                     break;
             }
 
-            Log.Information(source);
             NavigationSource = source;
         }
     }

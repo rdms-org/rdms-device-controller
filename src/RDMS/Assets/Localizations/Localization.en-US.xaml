@@ -17,6 +17,7 @@
     <system:String x:Key="SHELL_SIDENAV_NOTIFICATION">Notice</system:String>
     <system:String x:Key="SHELL_SIDENAV_STATUS">Status</system:String>
     <system:String x:Key="SHELL_SIDENAV_SCHEDULE">Schedule</system:String>
-    <system:String x:Key="SHELL_SIDENAV_OTP_AUTH">OTP Authentication</system:String>
+    <system:String x:Key="SHELL_SIDENAV_REPORT">Report</system:String>
+    <system:String x:Key="SHELL_SIDENAV_MANAGER">Manager</system:String>
     <system:String x:Key="SHELL_SIDENAV_SETTINGS">Settings</system:String>
 </ResourceDictionary>
