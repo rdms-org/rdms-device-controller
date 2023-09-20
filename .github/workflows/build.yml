@@ -42,6 +42,7 @@ jobs:
         -company "RDMS Project"
         -copyright "Copyright (c) 2023 RDMS Project Contributors all rights reserved."
         --framework net7.0
+        --self-contained false 
         --configuration Release
         -p:PublishReadyToRun=true
         -excludeSymbols $True
@@ -53,6 +54,7 @@ jobs:
         -company "RDMS Project"
         -copyright "Copyright (c) 2023 RDMS Project Contributors all rights reserved."
         --framework net7.0
+        --self-contained false 
         --configuration Release
         -p:PublishReadyToRun=true
         -p:PublishSingleFile=true
