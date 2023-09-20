@@ -68,14 +68,14 @@ jobs:
         
       - name: Build RDMS Device Controller UI
         run: |
-          ./tools/build_script.ps1 -target RDMS/RDMS.csproj $BUILD_OPTIONS_UI --runtime win-x86 --output ../../builds/x86/
-          ./tools/build_script.ps1 -target RDMS/RDMS.csproj $BUILD_OPTIONS_UI --runtime win-x64 --output ../../builds/x64/
+          ./tools/build_script.ps1 -source RDMS/RDMS.csproj $BUILD_OPTIONS_UI --runtime win-x86 --output ../../builds/x86/
+          ./tools/build_script.ps1 -source RDMS/RDMS.csproj $BUILD_OPTIONS_UI --runtime win-x64 --output ../../builds/x64/
         shell: pwsh
         
       - name: Build RDMS Device Controller Services
         run: |
-          ./tools/build_script.ps1 -target RDMS.Services/RDMS.Services.csproj $BUILD_OPTIONS_UI --runtime win-x86 --output ../../builds/x86/
-          ./tools/build_script.ps1 -target RDMS.Services/RDMS.Services.csproj $BUILD_OPTIONS_UI --runtime win-x64 --output ../../builds/x64/
+          ./tools/build_script.ps1 -source RDMS.Services/RDMS.Services.csproj $BUILD_OPTIONS_UI --runtime win-x86 --output ../../builds/x86/
+          ./tools/build_script.ps1 -source RDMS.Services/RDMS.Services.csproj $BUILD_OPTIONS_UI --runtime win-x64 --output ../../builds/x64/
         shell: pwsh
         
       - name: Copy Documentations
