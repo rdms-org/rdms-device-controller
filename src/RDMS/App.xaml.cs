@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using RDMS.Helpers;
 using RDMS.ViewModels;
+using RDMS.ViewModels.Pages;
 using Serilog;
 using Serilog.Events;
 using System;
@@ -72,7 +73,10 @@ namespace RDMS
         private void ConfigureServices()
         {
             var services = new ServiceCollection();
-            services.AddTransient(typeof(ShellViewModel));
+            services.AddSingleton(typeof(ShellViewModel));
+            services.AddSingleton(typeof(NotificationViewModel));
+            services.AddSingleton(typeof(StatusViewModel));
+            services.AddSingleton(typeof(ScheduleViewModel));
 
             Services = services.BuildServiceProvider();
         }

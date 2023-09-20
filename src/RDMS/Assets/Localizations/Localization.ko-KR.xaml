@@ -14,10 +14,9 @@
 
     <!--Shell-->
     <system:Double x:Key="SHELL_SIDENAV_FONT_SIZE">11</system:Double>
-    <system:String x:Key="SHELL_SIDENAV_NOTICE">알림</system:String>
+    <system:String x:Key="SHELL_SIDENAV_NOTIFICATION">알림</system:String>
     <system:String x:Key="SHELL_SIDENAV_STATUS">상태</system:String>
     <system:String x:Key="SHELL_SIDENAV_SCHEDULE">일정</system:String>
-    <system:String x:Key="SHELL_SIDENAV_CHECKER">검사</system:String>
     <system:String x:Key="SHELL_SIDENAV_OTP_AUTH">OTP 인증</system:String>
     <system:String x:Key="SHELL_SIDENAV_SETTINGS">설정</system:String>
 </ResourceDictionary>

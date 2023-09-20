@@ -29,12 +29,12 @@ namespace RDMS.ViewModels
 
         public virtual void OnNavigating(object sender, NavigatingCancelEventArgs e)
         {
-            throw new NotImplementedException();
+            // TO-DO: This method is not implemented.
         }
 
         public virtual void OnNavigated(object sender, NavigationEventArgs e)
         {
-            throw new NotImplementedException();
+            // TO-DO: This method is not implemented.
         }
     }
 }

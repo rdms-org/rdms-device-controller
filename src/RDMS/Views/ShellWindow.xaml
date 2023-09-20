@@ -36,22 +36,24 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Orientation="Vertical">
-                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0" IsChecked="False"
-                                 ToolTip="{DynamicResource SHELL_SIDENAV_NOTICE}"
-                                 IsEnabled="False">
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 4" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_NOTIFICATION}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Notification}">
                         <StackPanel>
                             <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="NotificationsNone"/>
                             <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
                                        TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
-                                       Text="{DynamicResource SHELL_SIDENAV_NOTICE}"/>
+                                       Text="{DynamicResource SHELL_SIDENAV_NOTIFICATION}"/>
                         </StackPanel>
                     </RadioButton>
 
-                    <Separator Foreground="{DynamicResource AldiemesDividerLight}" Margin="16 0 16 0" Opacity=".50"/>
+                    <Separator Foreground="{DynamicResource AldiemesDividerLight}" Margin="16 0 16 0" Opacity=".20"/>
 
-                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 8 8 8" Padding="0" IsChecked="True"
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 4 8 8" Padding="0"
                                  ToolTip="{DynamicResource SHELL_SIDENAV_STATUS}"
-                                 IsEnabled="False">
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Status}">
                         <StackPanel>
                             <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="ViewDashboardVariantOutline"/>
                             <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
@@ -60,9 +62,10 @@
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0" IsChecked="False"
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0"
                                  ToolTip="{DynamicResource SHELL_SIDENAV_SCHEDULE}"
-                                 IsEnabled="False">
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Schedule}">
                         <StackPanel>
                             <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="Calendar"/>
                             <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
@@ -70,28 +73,19 @@
                                        Text="{DynamicResource SHELL_SIDENAV_SCHEDULE}"/>
                         </StackPanel>
                     </RadioButton>
-
-                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0" IsChecked="False"
-                                 ToolTip="{DynamicResource SHELL_SIDENAV_CHECKER}"
-                                 IsEnabled="False">
-                        <StackPanel>
-                            <materialDesign:PackIcon HorizontalAlignment="Center" Width="16" Height="16" Kind="CheckAll"/>
-                            <TextBlock Style="{StaticResource MaterialDesignOverlineTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
-                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
-                                       Text="{DynamicResource SHELL_SIDENAV_CHECKER}"/>
-                        </StackPanel>
-                    </RadioButton>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0 10 0 10">
                     <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36"
+                            IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                             ToolTip="{DynamicResource SHELL_SIDENAV_OTP_AUTH}">
-                        <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="Key" />
+                        <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="KeyOutline" />
                     </Button>
 
                     <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36" Margin="0 6 0 0"
+                            IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                             ToolTip="{DynamicResource SHELL_SIDENAV_SETTINGS}">
-                        <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="Settings" />
+                        <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="SettingsOutline" />
                     </Button>
                 </StackPanel>
             </Grid>
@@ -100,13 +94,13 @@
                 <Grid>
                     <Frame NavigationUIVisibility="Hidden">
                         <i:Interaction.Behaviors>
-                            <behaviors:FrameBehavior NavigationSource="{Binding NavigationSource, Mode=TwoWay}" />
+                            <behaviors:FrameBehavior NavigationSource="{Binding NavigationSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         </i:Interaction.Behaviors>
                     </Frame>
 
                     <materialDesign:DialogHost DialogTheme="Light" CornerRadius="16 0 0 0" CloseOnClickAway="False" Placement="Center" DialogContentUniformCornerRadius="24"
                                                materialDesign:ElevationAssist.Elevation="Dp12"
-                                               IsOpen="True">
+                                               IsOpen="{Binding IsDialogOpen}">
                         <materialDesign:DialogHost.DialogContent>
                             <Grid Margin="20">
                                 <Grid.RowDefinitions>
