@@ -20,4 +20,22 @@
     <system:String x:Key="SHELL_SIDENAV_REPORT">Report</system:String>
     <system:String x:Key="SHELL_SIDENAV_MANAGER">Manager</system:String>
     <system:String x:Key="SHELL_SIDENAV_SETTINGS">Settings</system:String>
+
+    <!--Alert-->
+    <system:String x:Key="ALERT_PAGE_TITLE">Alert</system:String>
+
+    <!--Notification-->
+    <system:String x:Key="NOTIFICATION_PAGE_TITLE">Notice</system:String>
+
+    <!--Status-->
+    <system:String x:Key="STATUS_PAGE_TITLE">Status</system:String>
+
+    <!--Schedule-->
+    <system:String x:Key="SCHEDULE_PAGE_TITLE">Schedule</system:String>
+
+    <!--Report-->
+    <system:String x:Key="REPORT_PAGE_TITLE">Report</system:String>
+
+    <!--Manager-->
+    <system:String x:Key="MANAGER_PAGE_TITLE">Manager</system:String>
 </ResourceDictionary>
