@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Style x:Key="AldiemesLeftTabRadioButton" TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignTabRadioButton}">
+        <Style.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource AldiemesDividerLight}" />
+            </Trigger>
+        </Style.Triggers>
+
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="4 0 4 0"/>
+        <Setter Property="MinWidth" Value="48"/>
+        <Setter Property="Width" Value="48"/>
+        <Setter Property="MinHeight" Value="48"/>
+        <Setter Property="Height" Value="48"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border Name="ToggleBackgroundBorder" Background="Transparent" CornerRadius="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle Name="Indicator" Grid.Column="0" Fill="{DynamicResource SecondaryHueMidBrush}"
+                                       VerticalAlignment="Center"
+                                       Width="0" Height="0" RadiusX="2" RadiusY="2" Visibility="Hidden"/>
+                            <ContentPresenter Name="ToggleContentPresenter" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding ContentControl.Content}"/>
+                            <materialDesign:Ripple Name="RipplePresenter" Grid.Column="0" Grid.ColumnSpan="2" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                   Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False" Opacity=".82"
+                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" ClipToBounds="True"
+                                                   Clip="{Binding ElementName=RippleClippingBoundary, Path=RenderedGeometry}"/>
+                            <Rectangle Name="RippleClippingBoundary" Grid.Column="0" Grid.ColumnSpan="2" Fill="Transparent" RadiusX="4" RadiusY="4" Focusable="False" IsHitTestVisible="False" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0:0.4" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Width" To="4" Duration="0:0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Height" To="20" Duration="0:0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Opacity" To="0.25" Duration="0:0:0.4" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Width" To="0" Duration="0:0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Height" To="0" Duration="0:0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                            
+                            <Setter TargetName="ToggleBackgroundBorder" Property="Background" Value="{DynamicResource AldiemesDividerLight}"/>
+                            <Setter TargetName="RipplePresenter" Property="UIElement.Opacity" Value="1" />
+                            <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ToggleBackgroundBorder" Property="Opacity" Value=".40"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesignFlatButtonRipple}" />
+    </Style>
+
+    <Style x:Key="AldiemesRightTabRadioButton" TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignTabRadioButton}">
+        <Style.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource AldiemesDividerLight}" />
+            </Trigger>
+        </Style.Triggers>
+
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="4 0 4 0"/>
+        <Setter Property="MinWidth" Value="48"/>
+        <Setter Property="Width" Value="48"/>
+        <Setter Property="MinHeight" Value="48"/>
+        <Setter Property="Height" Value="48"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border Name="ToggleBackgroundBorder" Background="Transparent" CornerRadius="4">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle Name="Indicator" Grid.Column="1" Fill="{DynamicResource SecondaryHueMidBrush}"
+                                       VerticalAlignment="Center"
+                                       Width="0" Height="0" RadiusX="2" RadiusY="2" Visibility="Hidden"/>
+                            <ContentPresenter Name="ToggleContentPresenter" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding ContentControl.Content}"/>
+                            <materialDesign:Ripple Name="RipplePresenter" Grid.Column="0" Grid.ColumnSpan="2" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                   Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Focusable="False" Opacity=".82"
+                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" ClipToBounds="True"
+                                                   Clip="{Binding ElementName=RippleClippingBoundary, Path=RenderedGeometry}"/>
+                            <Rectangle Name="RippleClippingBoundary" Grid.Column="0" Grid.ColumnSpan="2" Fill="Transparent" RadiusX="4" RadiusY="4" Focusable="False" IsHitTestVisible="False" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0:0.4" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Width" To="4" Duration="0:0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Height" To="20" Duration="0:0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Opacity" To="0.25" Duration="0:0:0.4" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Width" To="0" Duration="0:0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="Indicator" Storyboard.TargetProperty="Height" To="0" Duration="0:0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+
+                            <Setter TargetName="ToggleBackgroundBorder" Property="Background" Value="{DynamicResource AldiemesDividerLight}"/>
+                            <Setter TargetName="RipplePresenter" Property="UIElement.Opacity" Value="1" />
+                            <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ToggleBackgroundBorder" Property="Opacity" Value=".40"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesignFlatButtonRipple}" />
+    </Style>
+</ResourceDictionary>

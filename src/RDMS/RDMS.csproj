@@ -7,6 +7,7 @@
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
+    <ApplicationIcon>Assets/RDMS.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

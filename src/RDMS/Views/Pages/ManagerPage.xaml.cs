@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RDMS.ViewModels.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,14 @@ using System.Windows.Shapes;
 namespace RDMS.Views.Pages
 {
     /// <summary>
-    /// DashboardPage.xaml에 대한 상호 작용 논리
+    /// ManagerPage.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class DashboardPage : Page
+    public partial class ManagerPage : Page
     {
-        public DashboardPage()
+        public ManagerPage()
         {
             InitializeComponent();
+            DataContext = App.Current.Services?.GetService(typeof(ManagerViewModel));
         }
     }
 }

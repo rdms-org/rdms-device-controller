@@ -11,4 +11,13 @@
     <system:String x:Key="COMMON_YES">예</system:String>
     <system:String x:Key="COMMON_CLOSE">닫기</system:String>
     <system:String x:Key="COMMON_COMPLETE">완료</system:String>
+
+    <!--Shell-->
+    <system:Double x:Key="SHELL_SIDENAV_FONT_SIZE">11</system:Double>
+    <system:String x:Key="SHELL_SIDENAV_NOTIFICATION">알림</system:String>
+    <system:String x:Key="SHELL_SIDENAV_STATUS">상태</system:String>
+    <system:String x:Key="SHELL_SIDENAV_SCHEDULE">일정</system:String>
+    <system:String x:Key="SHELL_SIDENAV_REPORT">보고서</system:String>
+    <system:String x:Key="SHELL_SIDENAV_MANAGER">관리</system:String>
+    <system:String x:Key="SHELL_SIDENAV_SETTINGS">설정</system:String>
 </ResourceDictionary>

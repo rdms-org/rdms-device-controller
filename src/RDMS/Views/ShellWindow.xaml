@@ -22,11 +22,165 @@
             <Image Margin="10 0 6 0" VerticalAlignment="Center" Width="14" Height="14" Source="{DynamicResource Favicon}"/>
             <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 0 0 2" VerticalAlignment="Center" Text="RDMS"/>
         </StackPanel>
-        
-        <Frame Grid.Row="1" Background="{DynamicResource AldiemesDividerLight}" NavigationUIVisibility="Hidden">
-            <i:Interaction.Behaviors>
-                <behaviors:FrameBehavior NavigationSource="{Binding NavigationSource, Mode=TwoWay}" />
-            </i:Interaction.Behaviors>
-        </Frame>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <StackPanel.Resources>
+                        <Style x:Key="AldiemesTabPackIcon" TargetType="materialDesign:PackIcon">
+                            <Setter Property="Width" Value="16"/>
+                            <Setter Property="Height" Value="16"/>
+                            
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton, Mode=FindAncestor}}" Value="True">
+                                    <Setter Property="materialDesign:PackIcon.Width" Value="18"/>
+                                    <Setter Property="materialDesign:PackIcon.Height" Value="18"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                        
+                        <Style x:Key="AldiemesTabTextBlock" TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignOverlineTextBlock}">
+                            <Setter Property="Visibility" Value="Visible"/>
+                            
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton, Mode=FindAncestor}}" Value="True">
+                                    <Setter Property="TextBlock.Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 4" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_NOTIFICATION}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Notification}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="NotificationsNone"/>
+                            <TextBlock Style="{StaticResource AldiemesTabTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
+                                       Text="{DynamicResource SHELL_SIDENAV_NOTIFICATION}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <Separator Foreground="{DynamicResource AldiemesDividerLight}" Margin="16 0 16 0" Opacity=".20"/>
+
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 4 8 8" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_STATUS}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Status}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="ViewDashboardVariantOutline"/>
+                            <TextBlock Style="{StaticResource AldiemesTabTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
+                                       Text="{DynamicResource SHELL_SIDENAV_STATUS}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_SCHEDULE}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Schedule}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="Calendar"/>
+                            <TextBlock Style="{StaticResource AldiemesTabTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
+                                       Text="{DynamicResource SHELL_SIDENAV_SCHEDULE}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 4" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_REPORT}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Report}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="ChartBar"/>
+                            <TextBlock Style="{StaticResource AldiemesTabTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
+                                       Text="{DynamicResource SHELL_SIDENAV_REPORT}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <Separator Foreground="{DynamicResource AldiemesDividerLight}" Margin="16 0 16 0" Opacity=".20"/>
+
+                    <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 4 8 8" Padding="0"
+                                 ToolTip="{DynamicResource SHELL_SIDENAV_MANAGER}"
+                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                                 IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Manager}">
+                        <StackPanel>
+                            <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="Tools"/>
+                            <TextBlock Style="{StaticResource AldiemesTabTextBlock}" Margin="0 2 0 0" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="{DynamicResource SHELL_SIDENAV_FONT_SIZE}"
+                                       Text="{DynamicResource SHELL_SIDENAV_MANAGER}"/>
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0 10 0 10">
+                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36"
+                            IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
+                            ToolTip="{DynamicResource SHELL_SIDENAV_SETTINGS}">
+                        <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="SettingsOutline" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <Border Grid.Column="1" Background="{DynamicResource AldiemesSecondaryBackground}" CornerRadius="16 0 0 0">
+                <Grid>
+                    <Frame NavigationUIVisibility="Hidden">
+                        <i:Interaction.Behaviors>
+                            <behaviors:FrameBehavior NavigationSource="{Binding NavigationSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </i:Interaction.Behaviors>
+                    </Frame>
+
+                    <materialDesign:DialogHost DialogTheme="Light" CornerRadius="16 0 0 0" CloseOnClickAway="False" Placement="Center" DialogContentUniformCornerRadius="24"
+                                               materialDesign:ElevationAssist.Elevation="Dp12"
+                                               IsOpen="{Binding IsDialogOpen}">
+                        <materialDesign:DialogHost.DialogContent>
+                            <Grid Margin="20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0" Height="240" Width="400">
+                                    <StackPanel Orientation="Vertical" Margin="40">
+                                        <materialDesign:PackIcon HorizontalAlignment="Center" Width="24" Height="24" Opacity=".68" Kind="PasswordOutline"/>
+                                        <TextBlock Style="{DynamicResource MaterialDesignSubtitle1TextBlock}" HorizontalAlignment="Center" Text="OTP 인증"/>
+
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 24 0 0">
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource AldiemesDivider}" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource AldiemesDivider}" Margin="8 0 0 0" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource AldiemesDivider}" Margin="8 0 0 0" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                            <TextBox Style="{StaticResource MaterialDesignOutlinedTextBox}" BorderBrush="{DynamicResource PrimaryHueMidBrush}" Margin="8 0 0 0" Width="45" Height="50"
+                                                     Padding="16 10 16 10" FontSize="18" FontWeight="Bold"/>
+                                        </StackPanel>
+
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 8 0 0" HorizontalAlignment="Center" Opacity=".68" Text="관리자 UI에 표시 된 OTP 인증번호를 입력하십시오." />
+                                    </StackPanel>
+                                </Grid>
+
+                                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Style="{StaticResource MaterialDesignOutlinedButton}" Height="36" materialDesign:ButtonAssist.CornerRadius="18" Content="취소"/>
+                                    <Button Style="{StaticResource MaterialDesignFlatMidBgButton}" Margin="8 0 0 0" Height="36" materialDesign:ButtonAssist.CornerRadius="18" Content="인증"/>
+                                </StackPanel>
+                            </Grid>
+                        </materialDesign:DialogHost.DialogContent>
+                    </materialDesign:DialogHost>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

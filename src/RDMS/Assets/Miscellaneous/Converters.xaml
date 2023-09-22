@@ -2,5 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:RDMS.Converters">
     <converters:BooleanConverter x:Key="BooleanConverter"/>
+    <converters:BooleanToEnumConverter x:Key="BooleanToEnumConverter"/>
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
 </ResourceDictionary>
