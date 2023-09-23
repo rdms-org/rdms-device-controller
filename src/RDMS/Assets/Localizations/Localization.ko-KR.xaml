@@ -20,6 +20,7 @@
     <system:String x:Key="SHELL_SIDENAV_REPORT">보고서</system:String>
     <system:String x:Key="SHELL_SIDENAV_MANAGER">관리</system:String>
     <system:String x:Key="SHELL_SIDENAV_SETTINGS">설정</system:String>
+    <system:String x:Key="SHELL_BUSY_INDICATOR_MESSAGE">요청을 처리하는 중입니다</system:String>
     
     <!--Alert-->
     <system:String x:Key="ALERT_PAGE_TITLE">알림</system:String>

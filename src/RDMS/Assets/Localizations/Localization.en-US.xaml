@@ -20,6 +20,7 @@
     <system:String x:Key="SHELL_SIDENAV_REPORT">Report</system:String>
     <system:String x:Key="SHELL_SIDENAV_MANAGER">Manager</system:String>
     <system:String x:Key="SHELL_SIDENAV_SETTINGS">Settings</system:String>
+    <system:String x:Key="SHELL_BUSY_INDICATOR_MESSAGE">Processing request</system:String>
 
     <!--Alert-->
     <system:String x:Key="ALERT_PAGE_TITLE">Alert</system:String>

@@ -45,6 +45,14 @@ namespace RDMS.ViewModels
             }
         }
 
+        private bool _isBusy = false;
+
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set => SetProperty(ref _isBusy, value);
+        }
+
         public ShellViewModel() 
         {
             Title = "Shell Window";
@@ -62,6 +70,12 @@ namespace RDMS.ViewModels
             WeakReferenceMessenger.Default.Register<NavigationMessage>(this, (recipient, message) =>
             {
                 NavigationSource = message.Value;
+            });
+
+            // Subscribes the messenger to get busy indicator messages.
+            WeakReferenceMessenger.Default.Register<BusyMessage>(this, (recipient, message) =>
+            {
+                IsBusy = message.Value;
             });
         }
 
