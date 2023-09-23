@@ -19,7 +19,8 @@ namespace RDMS.ViewModels
         Status,
         Schedule,
         Report,
-        Manager
+        Manager,
+        Settings
     }
 
     public class ShellViewModel : ViewModelBase
@@ -42,14 +43,6 @@ namespace RDMS.ViewModels
                 SetProperty(ref _navigationTab, value);
                 SyncronizeNavigationFrame();
             }
-        }
-
-        private bool _isDialogOpen = false;
-
-        public bool IsDialogOpen
-        {
-            get => _isDialogOpen;
-            set => SetProperty(ref _isDialogOpen, value);
         }
 
         public ShellViewModel() 
@@ -92,6 +85,9 @@ namespace RDMS.ViewModels
                     break;
                 case NavigationTab.Manager:
                     source = "./Views/Pages/ManagerPage.xaml";
+                    break;
+                case NavigationTab.Settings:
+                    source = "./Views/Pages/SettingsPage.xaml";
                     break;
                 default:
                     source = "./Views/Pages/AlertPage.xaml";

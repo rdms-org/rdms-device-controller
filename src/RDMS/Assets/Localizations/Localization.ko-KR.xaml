@@ -38,4 +38,7 @@
 
     <!--Manager-->
     <system:String x:Key="MANAGER_PAGE_TITLE">관리</system:String>
+
+    <!--Settings-->
+    <system:String x:Key="SETTINGS_PAGE_TITLE">설정</system:String>
 </ResourceDictionary>

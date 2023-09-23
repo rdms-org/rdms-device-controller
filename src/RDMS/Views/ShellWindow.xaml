@@ -7,6 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:behaviors="clr-namespace:RDMS.Behaviors"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:hardcodet="http://www.hardcodet.net/taskbar"
         mc:Ignorable="d"
         Style="{StaticResource AldiemesWindow}"
         Foreground="{DynamicResource AldiemesForeground}"
@@ -17,6 +18,10 @@
             <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <hardcodet:TaskbarIcon x:Name="TrayIcon" IconSource="/Assets/RDMS.ico" ToolTipText="RDMS" MenuActivation="LeftOrRightClick" PopupActivation="DoubleClick">
+            
+        </hardcodet:TaskbarIcon>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Image Margin="10 0 6 0" VerticalAlignment="Center" Width="14" Height="14" Source="{DynamicResource Favicon}"/>
@@ -62,7 +67,6 @@
                     
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 4" Padding="0"
                                  ToolTip="{DynamicResource SHELL_SIDENAV_NOTIFICATION}"
-                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                                  IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Notification}">
                         <StackPanel>
                             <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="NotificationsNone"/>
@@ -76,7 +80,6 @@
 
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 4 8 8" Padding="0"
                                  ToolTip="{DynamicResource SHELL_SIDENAV_STATUS}"
-                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                                  IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Status}">
                         <StackPanel>
                             <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="ViewDashboardVariantOutline"/>
@@ -88,7 +91,6 @@
 
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 8" Padding="0"
                                  ToolTip="{DynamicResource SHELL_SIDENAV_SCHEDULE}"
-                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                                  IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Schedule}">
                         <StackPanel>
                             <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="Calendar"/>
@@ -100,7 +102,6 @@
 
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 0 8 4" Padding="0"
                                  ToolTip="{DynamicResource SHELL_SIDENAV_REPORT}"
-                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                                  IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Report}">
                         <StackPanel>
                             <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="ChartBar"/>
@@ -114,7 +115,6 @@
 
                     <RadioButton Style="{StaticResource AldiemesLeftTabRadioButton}" Margin="8 4 8 8" Padding="0"
                                  ToolTip="{DynamicResource SHELL_SIDENAV_MANAGER}"
-                                 IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
                                  IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Manager}">
                         <StackPanel>
                             <materialDesign:PackIcon Style="{StaticResource AldiemesTabPackIcon}" HorizontalAlignment="Center" Kind="Tools"/>
@@ -126,11 +126,11 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0 10 0 10">
-                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36"
-                            IsEnabled="{Binding IsDialogOpen, Converter={StaticResource BooleanConverter}}"
-                            ToolTip="{DynamicResource SHELL_SIDENAV_SETTINGS}">
+                    <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}"
+                                  ToolTip="{DynamicResource SHELL_SIDENAV_SETTINGS}"
+                                  IsChecked="{Binding NavigationTab, Mode=TwoWay, Converter={StaticResource BooleanToEnumConverter}, ConverterParameter=Settings}">
                         <materialDesign:PackIcon Foreground="{DynamicResource AldiemesForegroundUltraLight}" Width="16" Height="16" Kind="SettingsOutline" />
-                    </Button>
+                    </ToggleButton>
                 </StackPanel>
             </Grid>
 
