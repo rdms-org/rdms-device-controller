@@ -41,8 +41,8 @@
                             </ListView.ItemsPanel>
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn DisplayMemberBinding="{Binding IsRead}" Width="30" Header="{DynamicResource NOTIFICATION_PAGE_NO_OLDER_NOTIFICATIONS}" />
-                                    <GridViewColumn DisplayMemberBinding="{Binding Sender}" Width="120" Header="{DynamicResource NOTIFICATION_PAGE_IS_READ}" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding IsRead}" Width="30" Header="{DynamicResource NOTIFICATION_PAGE_IS_READ}" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Sender}" Width="120" Header="{DynamicResource NOTIFICATION_PAGE_SENDER}" />
                                     <GridViewColumn DisplayMemberBinding="{Binding Timestamp}" Width="160" Header="{DynamicResource NOTIFICATION_PAGE_TIMESTAMP}" />
                                     <GridViewColumn DisplayMemberBinding="{Binding Title}" Width="400" Header="{DynamicResource NOTIFICATION_PAGE_TITLE_HEADER}" />
                                 </GridView>
