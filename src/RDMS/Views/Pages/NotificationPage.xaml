@@ -21,8 +21,68 @@
             <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0" Padding="0" Opacity=".70" Text="{DynamicResource NOTIFICATION_PAGE_TITLE}" />
         </StackPanel>
 
-        <Grid Grid.Row="1">
-            
-        </Grid>
+        <Border Grid.Row="1" Margin="16 0 16 16" Padding="0"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="44"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="0 0 0 1">
+                    <Grid>
+                        <ListView materialDesign:DataGridAssist.ColumnHeaderPadding="16 8 16 8"
+                          ItemsSource="{Binding Items1}" >
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel/>
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding IsRead}" Width="30" Header="{DynamicResource NOTIFICATION_PAGE_NO_OLDER_NOTIFICATIONS}" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Sender}" Width="120" Header="{DynamicResource NOTIFICATION_PAGE_IS_READ}" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Timestamp}" Width="160" Header="{DynamicResource NOTIFICATION_PAGE_TIMESTAMP}" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Width="400" Header="{DynamicResource NOTIFICATION_PAGE_TITLE_HEADER}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                        <TextBlock Margin="0 48 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity=".70"
+                                   Text="{DynamicResource NOTIFICATION_PAGE_NO_OLDER_NOTIFICATIONS}">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignCaptionTextBlock}">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Items1.Count}" Value="0">
+                                            <Setter Property="Visibility" Value="Hidden"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </Border>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 4 0">
+                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36"
+                            ToolTip="{DynamicResource NOTIFICATION_PAGE_VIEW}">
+                        <materialDesign:PackIcon Width="16" Height="16" Opacity=".68" Kind="ArrowRight" />
+                    </Button>
+                    
+                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36" Margin="4 0 0 0"
+                            ToolTip="{DynamicResource NOTIFICATION_PAGE_REMOVE}">
+                        <materialDesign:PackIcon Width="16" Height="16" Opacity=".68" Kind="DeleteOutline" />
+                    </Button>
+                    
+                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="36" Height="36" Margin="4 0 0 0"
+                            ToolTip="{DynamicResource NOTIFICATION_PAGE_REMOVE_ALL}">
+                        <materialDesign:PackIcon Width="16" Height="16" Opacity=".68" Kind="DeleteSweepOutline" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

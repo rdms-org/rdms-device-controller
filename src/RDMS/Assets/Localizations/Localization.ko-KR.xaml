@@ -27,6 +27,14 @@
 
     <!--Notification-->
     <system:String x:Key="NOTIFICATION_PAGE_TITLE">알림</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_NO_OLDER_NOTIFICATIONS">알림이 없습니다</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_IS_READ">확인 여부</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_SENDER">발송자</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_TIMESTAMP">시각</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_TITLE_HEADER">제목</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_VIEW">보기</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_REMOVE">삭제</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_REMOVE_ALL">모두 삭제</system:String>
 
     <!--Status-->
     <system:String x:Key="STATUS_PAGE_TITLE">상태</system:String>

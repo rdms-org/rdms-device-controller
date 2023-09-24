@@ -27,6 +27,14 @@
 
     <!--Notification-->
     <system:String x:Key="NOTIFICATION_PAGE_TITLE">Notice</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_NO_OLDER_NOTIFICATIONS">No older notifications</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_IS_READ">Is read</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_SENDER">Sender</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_TIMESTAMP">Timestamp</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_TITLE_HEADER">Title</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_VIEW">View</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_REMOVE">Remove</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_REMOVE_ALL">Remove all</system:String>
 
     <!--Status-->
     <system:String x:Key="STATUS_PAGE_TITLE">Status</system:String>
