@@ -40,17 +40,17 @@
                                 </StackPanel>
 
                                 <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 24 0 0" Padding="0"
-                                           HorizontalAlignment="Center" Opacity=".80"
-                                           Text="UI-v0.9.1 | SVC-v0.5.8" />
+                                           HorizontalAlignment="Center" Opacity=".60"
+                                           Text="UI(v0.9.1) / SVC(v0.5.8)" />
                                 <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" Padding="0"
-                                           HorizontalAlignment="Center" Opacity=".80"
+                                           HorizontalAlignment="Center" Opacity=".60"
                                            Text="Copyright (c) 2023 Project RDMS all rights reserved." />
                             </StackPanel>
                         </Grid>
                     </Border>
 
                     <Border Margin="16 0 16 6" Padding="0"
-                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
@@ -70,7 +70,7 @@
                     </Border>
 
                     <Border Margin="16 0 16 6" Padding="0"
-                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
@@ -90,7 +90,7 @@
                     </Border>
 
                     <Border Margin="16 0 16 6" Padding="0"
-                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
@@ -110,7 +110,7 @@
                     </Border>
 
                     <Border Margin="16 0 16 6" Padding="0"
-                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
@@ -130,7 +130,7 @@
                     </Border>
 
                     <Border Margin="16 0 16 16" Padding="0"
-                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
