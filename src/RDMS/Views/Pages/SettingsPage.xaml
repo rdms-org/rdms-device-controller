@@ -24,11 +24,11 @@
         <Grid Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" materialDesign:ScrollViewerAssist.ShowSeparators="True">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <Border Margin="16 0 16 6" Padding="0"
+                    <Border Margin="16 0 16 0" Padding="0"
                         BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="0" CornerRadius="6"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Grid>
-                            <StackPanel Orientation="Vertical" Margin="16 0 16 24" VerticalAlignment="Top">
+                            <StackPanel Orientation="Vertical" Margin="16 0 16 32" VerticalAlignment="Top">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                     <Image Width="48" Height="48" Source="{DynamicResource Favicon}"/>
                                     <StackPanel Orientation="Vertical" Margin="6 0 0 0" VerticalAlignment="Center">
@@ -39,7 +39,7 @@
                                     </StackPanel>
                                 </StackPanel>
 
-                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 24 0 0" Padding="0"
+                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" Padding="0"
                                            HorizontalAlignment="Center" Opacity=".60"
                                            Text="UI(v0.9.1) / SVC(v0.5.8)" />
                                 <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" Padding="0"
