@@ -22,7 +22,134 @@
         </StackPanel>
 
         <Grid Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" materialDesign:ScrollViewerAssist.ShowSeparators="True">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Border Margin="16 0 16 6" Padding="0"
+                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="0" CornerRadius="6"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Grid>
+                            <StackPanel Orientation="Vertical" Margin="16 0 16 24" VerticalAlignment="Top">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Image Width="48" Height="48" Source="{DynamicResource Favicon}"/>
+                                    <StackPanel Orientation="Vertical" Margin="6 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0" Padding="0" VerticalAlignment="Center" Opacity=".90"
+                                                   FontWeight="Light" Text="RDMS Device Controller" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".60"
+                                                   Text="A component of Rental Device Management System" />
+                                    </StackPanel>
+                                </StackPanel>
 
+                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 24 0 0" Padding="0"
+                                           HorizontalAlignment="Center" Opacity=".80"
+                                           Text="UI-v0.9.1 | SVC-v0.5.8" />
+                                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" Padding="0"
+                                           HorizontalAlignment="Center" Opacity=".80"
+                                           Text="Copyright (c) 2023 Project RDMS all rights reserved." />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <Border Margin="16 0 16 6" Padding="0"
+                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="SettingsOutline"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_GENERAL_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_GENERAL_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="16 0 16 6" Padding="0"
+                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="Server"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="16 0 16 6" Padding="0"
+                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="ChartBar"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_LOGGING_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_LOGGING_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="16 0 16 6" Padding="0"
+                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="MagnifyScan"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="16 0 16 16" Padding="0"
+                        BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="InfoOutline"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INFO_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INFO_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

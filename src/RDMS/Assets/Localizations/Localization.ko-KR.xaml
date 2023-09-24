@@ -42,4 +42,14 @@
 
     <!--Settings-->
     <system:String x:Key="SETTINGS_PAGE_TITLE">설정</system:String>
+    <system:String x:Key="SETTINGS_PAGE_GENERAL_HEADER">일반</system:String>
+    <system:String x:Key="SETTINGS_PAGE_GENERAL_DESC">사용자 설정 가능 옵션</system:String>
+    <system:String x:Key="SETTINGS_PAGE_API_SERVER_HEADER">관리 서버</system:String>
+    <system:String x:Key="SETTINGS_PAGE_API_SERVER_DESC">서버 주소, 대체 서버 주소</system:String>
+    <system:String x:Key="SETTINGS_PAGE_LOGGING_HEADER">로그</system:String>
+    <system:String x:Key="SETTINGS_PAGE_LOGGING_DESC">로깅 대상, 로깅 주기, 보고 주기</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INSPECTOR_HEADER">검사기</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INSPECTOR_DESC">필수 검사 범위, 검사 제외 대상</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INFO_HEADER">정보</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INFO_DESC">프로그램 정보, 오픈소스 정보</system:String>
 </ResourceDictionary>

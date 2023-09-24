@@ -42,4 +42,14 @@
 
     <!--Settings-->
     <system:String x:Key="SETTINGS_PAGE_TITLE">Settings</system:String>
+    <system:String x:Key="SETTINGS_PAGE_GENERAL_HEADER">General</system:String>
+    <system:String x:Key="SETTINGS_PAGE_GENERAL_DESC">User changeable options</system:String>
+    <system:String x:Key="SETTINGS_PAGE_API_SERVER_HEADER">Management Server</system:String>
+    <system:String x:Key="SETTINGS_PAGE_API_SERVER_DESC">Server address, Alternate server address</system:String>
+    <system:String x:Key="SETTINGS_PAGE_LOGGING_HEADER">Logging</system:String>
+    <system:String x:Key="SETTINGS_PAGE_LOGGING_DESC">Targets, Logging interval, Reporting interval</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INSPECTOR_HEADER">Inspector</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INSPECTOR_DESC">Basic inspection targets, Ignores</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INFO_HEADER">Information</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INFO_DESC">Application information, Open-source information</system:String>
 </ResourceDictionary>
