@@ -17,7 +17,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="24 24 24 24">
+        <StackPanel Grid.Row="0" Margin="24 24 24 20">
             <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0" Padding="0" Opacity=".70" Text="{DynamicResource NOTIFICATION_PAGE_TITLE}" />
         </StackPanel>
 
