@@ -37,8 +37,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="SettingsOutline"/>
                                     <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
-                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_GENERAL_HEADER}" />
-                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_GENERAL_DESC}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_GENERAL_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_GENERAL_DESC}" />
                                     </StackPanel>
                                 </StackPanel>
                             </Expander.Header>
@@ -61,8 +61,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="Server"/>
                                     <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
-                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_HEADER}" />
-                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_DESC}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_DESC}" />
                                     </StackPanel>
                                 </StackPanel>
                             </Expander.Header>
@@ -85,8 +85,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="ChartBar"/>
                                     <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
-                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_LOGGING_HEADER}" />
-                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_LOGGING_DESC}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_LOGGING_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_LOGGING_DESC}" />
                                     </StackPanel>
                                 </StackPanel>
                             </Expander.Header>
@@ -109,8 +109,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="MagnifyScan"/>
                                     <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
-                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_HEADER}" />
-                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_DESC}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_DESC}" />
                                     </StackPanel>
                                 </StackPanel>
                             </Expander.Header>
@@ -133,8 +133,8 @@
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="InfoOutline"/>
                                     <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
-                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INFO_HEADER}" />
-                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0" Padding="0" Opacity=".50" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INFO_DESC}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INFO_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INFO_DESC}" />
                                     </StackPanel>
                                 </StackPanel>
                             </Expander.Header>
