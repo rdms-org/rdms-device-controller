@@ -36,8 +36,9 @@
 
                 <Border Grid.Row="0" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="0 0 0 1">
                     <Grid>
-                        <ListView materialDesign:DataGridAssist.ColumnHeaderPadding="16 8 16 8"
-                          ItemsSource="{Binding Items1}" >
+                        <ListView 
+                                  materialDesign:DataGridAssist.ColumnHeaderPadding="16 8 16 8"
+                                  ItemsSource="{Binding Items1}">
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <VirtualizingStackPanel/>

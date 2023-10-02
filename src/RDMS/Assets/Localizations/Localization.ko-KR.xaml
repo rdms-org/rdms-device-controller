@@ -42,7 +42,7 @@
     <!--Status-->
     <system:String x:Key="STATUS_PAGE_TITLE">상태</system:String>
     <system:String x:Key="STATUS_PAGE_MODE_HEADER">모드</system:String>
-    <system:String x:Key="STATUS_PAGE_DEVICE_INFO_HEADER">기기 정보</system:String>
+    <system:String x:Key="STATUS_PAGE_DEVICE_NAME_HEADER">기기</system:String>
     <system:String x:Key="STATUS_PAGE_LOG_REPORT_HEADER">보고서</system:String>
 
     <!--Schedule-->

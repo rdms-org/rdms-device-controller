@@ -42,11 +42,13 @@
     <!--Status-->
     <system:String x:Key="STATUS_PAGE_TITLE">Status</system:String>
     <system:String x:Key="STATUS_PAGE_MODE_HEADER">MODE</system:String>
-    <system:String x:Key="STATUS_PAGE_DEVICE_INFO_HEADER">DEVICE INFO</system:String>
+    <system:String x:Key="STATUS_PAGE_DEVICE_NAME_HEADER">DEVICE</system:String>
     <system:String x:Key="STATUS_PAGE_LOG_REPORT_HEADER">REPORT</system:String>
 
     <!--Schedule-->
     <system:String x:Key="SCHEDULE_PAGE_TITLE">Schedule</system:String>
+    <system:String x:Key="SCHEDULE_PAGE_LIST_HEADER">TO-DO List</system:String>
+    <system:String x:Key="SCHEDULE_PAGE_LIST_NO_OLDER_NOTIFICATIONS">No any TO-DOs</system:String>
 
     <!--Report-->
     <system:String x:Key="REPORT_PAGE_TITLE">Report</system:String>

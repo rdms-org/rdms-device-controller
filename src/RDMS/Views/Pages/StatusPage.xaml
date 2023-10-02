@@ -39,7 +39,7 @@
                     <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
                 </Border.Effect>
 
-                <Grid Margin="16">
+                <Grid Margin="24">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
@@ -49,10 +49,13 @@
                         <materialDesign:PackIcon VerticalAlignment="Center" Width="14" Height="14" Opacity=".70" Kind="ServerOutline" />
                         <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Padding="0" VerticalAlignment="Center" Opacity=".70"
                                    Text="{DynamicResource STATUS_PAGE_MODE_HEADER}" />
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Padding="0" VerticalAlignment="Center"
+                                   FontWeight="Bold"  Opacity=".70"
+                                   Text="대여" />
                     </StackPanel>
 
                     <Grid Grid.Row="1">
-                        
+                        <Separator Background="{DynamicResource AldiemesDividerLight}" Margin="0 16 0 16" VerticalAlignment="Top"/>
                     </Grid>
                 </Grid>
             </Border>
@@ -64,7 +67,7 @@
                     <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
                 </Border.Effect>
 
-                <Grid Margin="16">
+                <Grid Margin="24">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
@@ -73,11 +76,14 @@
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
                         <materialDesign:PackIcon VerticalAlignment="Center" Width="14" Height="14" Opacity=".70" Kind="Laptop" />
                         <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Padding="0" VerticalAlignment="Center" Opacity=".70"
-                                   Text="{DynamicResource STATUS_PAGE_DEVICE_INFO_HEADER}" />
+                                   Text="{DynamicResource STATUS_PAGE_DEVICE_NAME_HEADER}" />
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Padding="0" VerticalAlignment="Center"
+                                   FontWeight="Bold"  Opacity=".70"
+                                   Text="DESKTOP-F24XF1" />
                     </StackPanel>
 
                     <Grid Grid.Row="1">
-                        
+                        <Separator Background="{DynamicResource AldiemesDividerLight}" Margin="0 16 0 16" VerticalAlignment="Top"/>
                     </Grid>
                 </Grid>
             </Border>
@@ -89,8 +95,19 @@
                     <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
                 </Border.Effect>
 
-                <Grid Margin="16">
-                    
+                <Grid Margin="24">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Opacity=".60" Text="보고서" />
+                    </StackPanel>
+
+                    <Grid Grid.Row="1">
+                        <Separator Background="{DynamicResource AldiemesDividerLight}" Margin="0 16 0 16" VerticalAlignment="Top"/>
+                    </Grid>
                 </Grid>
             </Border>
         </Grid>
