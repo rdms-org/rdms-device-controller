@@ -142,7 +142,8 @@
 
             <Border Grid.Column="1" Background="{DynamicResource AldiemesSecondaryBackground}" CornerRadius="16 0 0 0">
                 <Grid>
-                    <Frame NavigationUIVisibility="Hidden">
+                    <Frame NavigationUIVisibility="Hidden" Navigating="OnNavigating">
+                        
                         <i:Interaction.Behaviors>
                             <behaviors:FrameBehavior NavigationSource="{Binding NavigationSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         </i:Interaction.Behaviors>
