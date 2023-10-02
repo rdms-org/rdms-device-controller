@@ -47,6 +47,16 @@
 
     <!--Manager-->
     <system:String x:Key="MANAGER_PAGE_TITLE">Manager</system:String>
+    <system:String x:Key="MANAGER_PAGE_START">START</system:String>
+    <system:String x:Key="MANAGER_PAGE_ADD_DEVICE_HEADER">Add Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_ADD_DEVICE_DESC">Register this device with the management server.</system:String>
+    <system:String x:Key="MANAGER_PAGE_REMOVE_DEVICE_HEADER">Remove Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_REMOVE_DEVICE_DESC">Remove this device from the control of the current management server.</system:String>
+    <system:String x:Key="MANAGER_PAGE_RENT_DEVICE_HEADER">Rent Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_RENT_DEVICE_DESC">Change this device's operating mode to rental mode.</system:String>
+    <system:String x:Key="MANAGER_PAGE_RETURN_DEVICE_HEADER">Return Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_RETURN_DEVICE_DESC">Change this device's operating mode to maintenance mode.</system:String>
+    <system:String x:Key="MANAGER_PAGE_CAUTION">※ You must select the same action that you selected on the Manager Web.</system:String>
 
     <!--Settings-->
     <system:String x:Key="SETTINGS_PAGE_TITLE">Settings</system:String>

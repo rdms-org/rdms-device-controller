@@ -23,63 +23,166 @@
 
         <Grid Grid.Row="1" Margin="20 0 20 20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
-            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel Orientation="Vertical" Margin="20 0 20 0">
-                    <RadioButton Style="{StaticResource AldiemesCircleSelectionToggleButton}" Width="120" Height="120" GroupName="TaskGroup" ToolTip="MaterialDesignFlatToggleButton">
-                        <RadioButton.Effect>
-                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".05" />
-                        </RadioButton.Effect>
 
-                        <materialDesign:PackIcon Width="30" Height="30" Opacity=".80" Kind="Paperclip" />
-                    </RadioButton>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
 
-                    <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Opacity=".40" Text="기기 등록"/>
-                </StackPanel>
+            <Border Grid.Row="0" Grid.Column="0" Margin="0 0 10 10" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
 
-                <StackPanel Orientation="Vertical" Margin="20 0 20 0">
-                    <RadioButton Style="{StaticResource AldiemesCircleSelectionToggleButton}" Width="120" Height="120" GroupName="TaskGroup" ToolTip="MaterialDesignFlatToggleButton">
-                        <RadioButton.Effect>
-                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".05" />
-                        </RadioButton.Effect>
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                        <materialDesign:PackIcon Width="30" Height="30" Opacity=".80" Kind="Paperclip" />
-                    </RadioButton>
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="ServerPlusOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_ADD_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_ADD_DEVICE_DESC}"/>
+                    </StackPanel>
 
-                    <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Opacity=".40" Text="기기 제거"/>
-                </StackPanel>
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
 
-                <StackPanel Orientation="Vertical" Margin="20 0 20 0">
-                    <RadioButton Style="{StaticResource AldiemesCircleSelectionToggleButton}" Width="120" Height="120" GroupName="TaskGroup" ToolTip="MaterialDesignFlatToggleButton">
-                        <RadioButton.Effect>
-                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".05" />
-                        </RadioButton.Effect>
+            <Border Grid.Row="0" Grid.Column="1" Margin="0 0 0 10" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
 
-                        <materialDesign:PackIcon Width="30" Height="30" Opacity=".80" Kind="Paperclip" />
-                    </RadioButton>
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-                    <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Opacity=".40" Text="기기 대여"/>
-                </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="ServerRemoveOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_REMOVE_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_REMOVE_DEVICE_DESC}"/>
+                    </StackPanel>
 
-                <StackPanel Orientation="Vertical" Margin="20 0 20 0">
-                    <RadioButton Style="{StaticResource AldiemesCircleSelectionToggleButton}" Width="120" Height="120" GroupName="TaskGroup" ToolTip="MaterialDesignFlatToggleButton">
-                        <RadioButton.Effect>
-                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".05" />
-                        </RadioButton.Effect>
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
 
-                        <materialDesign:PackIcon Width="30" Height="30" Opacity=".80" Kind="Paperclip" />
-                    </RadioButton>
+            <Border Grid.Row="1" Grid.Column="0" Margin="0 0 10 0" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
 
-                    <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" FontSize="14" FontWeight="Medium" Opacity=".40" Text="기기 반납"/>
-                </StackPanel>
-            </StackPanel>
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="1" Orientation="Vertical">
-                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 0 0 8" HorizontalAlignment="Center" Opacity=".50" Text="※ 반드시 관리자 웹에서 선택한 것과 동일한 작업을 선택하여야 합니다." />
-                <Button Style="{StaticResource MaterialDesignOutlinedButton}" HorizontalAlignment="Center" Width="150" Height="40" materialDesign:ButtonAssist.CornerRadius="20" Content="작업"/>
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="LockOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RENT_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RENT_DEVICE_DESC}"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="1" Margin="0 0 0 0" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
+
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="LockOpenVariantOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RETURN_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RETURN_DEVICE_DESC}"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" Opacity=".50" Text="{DynamicResource MANAGER_PAGE_CAUTION}" />
             </StackPanel>
         </Grid>
     </Grid>

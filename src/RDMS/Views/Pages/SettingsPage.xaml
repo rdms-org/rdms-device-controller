@@ -24,7 +24,7 @@
         <Grid Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" materialDesign:ScrollViewerAssist.ShowSeparators="True">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                    <Border Margin="16 0 16 6" Padding="0"
+                    <Border Margin="18 0 18 6" Padding="0"
                         Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Border.Effect>
@@ -48,7 +48,7 @@
                         </Expander>
                     </Border>
 
-                    <Border Margin="16 0 16 6" Padding="0"
+                    <Border Margin="18 0 18 6" Padding="0"
                         Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Border.Effect>
@@ -72,7 +72,7 @@
                         </Expander>
                     </Border>
 
-                    <Border Margin="16 0 16 6" Padding="0"
+                    <Border Margin="18 0 18 6" Padding="0"
                         Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Border.Effect>
@@ -96,7 +96,7 @@
                         </Expander>
                     </Border>
 
-                    <Border Margin="16 0 16 6" Padding="0"
+                    <Border Margin="18 0 18 6" Padding="0"
                         Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Border.Effect>
@@ -120,7 +120,7 @@
                         </Expander>
                     </Border>
 
-                    <Border Margin="16 0 16 16" Padding="0"
+                    <Border Margin="18 0 18 18" Padding="0"
                         Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
                         <Border.Effect>
