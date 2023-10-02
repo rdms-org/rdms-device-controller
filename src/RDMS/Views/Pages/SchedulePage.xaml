@@ -22,7 +22,70 @@
         </StackPanel>
 
         <Grid Grid.Row="1" Margin="16 0 16 16">
+            <Border Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Rectangle Grid.Column="0" x:Name="ClippingBoundary" Fill="Transparent" RadiusX="16" RadiusY="16"/>
+                    
+                    <Calendar Grid.Column="0" Style="{StaticResource MaterialDesignCalendarPortraitForeground}"
+                              Margin="10 16 10 10" VerticalAlignment="Center" HorizontalAlignment="Center"
+                              Background="Transparent"
+                              materialDesign:CalendarAssist.IsHeaderVisible="False"
+                              Language="{Binding LanguageResources}">
+                        <Calendar.CalendarDayButtonStyle>
+                            <Style TargetType="CalendarDayButton" BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
+                                <Setter Property="Margin" Value="2 3 2 3"/>
+                                <Setter Property="Width" Value="48"/>
+                                <Setter Property="Height" Value="48"/>
+                                <Setter Property="FontSize" Value="14"/>
+                            </Style>
+                        </Calendar.CalendarDayButtonStyle>
+                    </Calendar>
+
+                    <Border Grid.Column="1" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1 0 0 0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="24 26 24 24">
+                                <TextBlock Style="{StaticResource MaterialDesignSubtitle2TextBlock}" Opacity=".60" Text="{DynamicResource SCHEDULE_PAGE_LIST_HEADER}" />
+                            </StackPanel>
+
+                            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" materialDesign:ScrollViewerAssist.ShowSeparators="True">
+                                <Grid>
+                                    <!--TODO: Add a listview-->
+                                    
+                                    <TextBlock Margin="0 0 0 24" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity=".60"
+                                               Text="{DynamicResource SCHEDULE_PAGE_LIST_NO_OLDER_NOTIFICATIONS}">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignCaptionTextBlock}">
+                                                <Setter Property="Visibility" Value="Visible"/>
+
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Items1.Count}" Value="0">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </Page>

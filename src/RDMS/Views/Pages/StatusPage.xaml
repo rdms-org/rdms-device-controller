@@ -39,8 +39,21 @@
                     <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
                 </Border.Effect>
 
-                <Grid>
-                    
+                <Grid Margin="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <materialDesign:PackIcon VerticalAlignment="Center" Width="14" Height="14" Opacity=".70" Kind="ServerOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Padding="0" VerticalAlignment="Center" Opacity=".70"
+                                   Text="{DynamicResource STATUS_PAGE_MODE_HEADER}" />
+                    </StackPanel>
+
+                    <Grid Grid.Row="1">
+                        
+                    </Grid>
                 </Grid>
             </Border>
 
@@ -51,8 +64,21 @@
                     <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
                 </Border.Effect>
 
-                <Grid>
+                <Grid Margin="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <materialDesign:PackIcon VerticalAlignment="Center" Width="14" Height="14" Opacity=".70" Kind="Laptop" />
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Padding="0" VerticalAlignment="Center" Opacity=".70"
+                                   Text="{DynamicResource STATUS_PAGE_DEVICE_INFO_HEADER}" />
+                    </StackPanel>
+
+                    <Grid Grid.Row="1">
+                        
+                    </Grid>
                 </Grid>
             </Border>
 
@@ -63,8 +89,8 @@
                     <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
                 </Border.Effect>
 
-                <Grid>
-
+                <Grid Margin="16">
+                    
                 </Grid>
             </Border>
         </Grid>

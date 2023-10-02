@@ -1,6 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    <!--Identifier-->
+    <system:String x:Key="IDENTIFIER">ko-KR</system:String>
+
     <!--Common-->
     <system:String x:Key="COMMON_EXPLORE">...</system:String>
     <system:String x:Key="COMMON_GO_BACK">뒤로 가기</system:String>
@@ -38,9 +41,14 @@
 
     <!--Status-->
     <system:String x:Key="STATUS_PAGE_TITLE">상태</system:String>
+    <system:String x:Key="STATUS_PAGE_MODE_HEADER">모드</system:String>
+    <system:String x:Key="STATUS_PAGE_DEVICE_INFO_HEADER">기기 정보</system:String>
+    <system:String x:Key="STATUS_PAGE_LOG_REPORT_HEADER">보고서</system:String>
 
     <!--Schedule-->
     <system:String x:Key="SCHEDULE_PAGE_TITLE">일정</system:String>
+    <system:String x:Key="SCHEDULE_PAGE_LIST_HEADER">일정 목록</system:String>
+    <system:String x:Key="SCHEDULE_PAGE_LIST_NO_OLDER_NOTIFICATIONS">일정이 없습니다</system:String>
 
     <!--Report-->
     <system:String x:Key="REPORT_PAGE_TITLE">보고서</system:String>
