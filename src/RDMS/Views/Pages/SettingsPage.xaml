@@ -25,8 +25,12 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" materialDesign:ScrollViewerAssist.ShowSeparators="True">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <Border Margin="16 0 16 6" Padding="0"
-                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
                             <Expander.Header>
@@ -45,8 +49,12 @@
                     </Border>
 
                     <Border Margin="16 0 16 6" Padding="0"
-                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
                             <Expander.Header>
@@ -65,8 +73,12 @@
                     </Border>
 
                     <Border Margin="16 0 16 6" Padding="0"
-                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
                             <Expander.Header>
@@ -85,8 +97,12 @@
                     </Border>
 
                     <Border Margin="16 0 16 6" Padding="0"
-                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
                             <Expander.Header>
@@ -105,8 +121,12 @@
                     </Border>
 
                     <Border Margin="16 0 16 16" Padding="0"
-                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
                         <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
                               materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
                             <Expander.Header>

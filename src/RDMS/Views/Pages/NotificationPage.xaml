@@ -22,8 +22,12 @@
         </StackPanel>
 
         <Border Grid.Row="1" Margin="16 0 16 16" Padding="0"
-                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDivider}" BorderThickness="1" CornerRadius="6"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
                         materialDesign:ElevationAssist.Elevation="Dp0">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+            </Border.Effect>
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -49,7 +53,7 @@
                             </ListView.View>
                         </ListView>
 
-                        <TextBlock Margin="0 48 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity=".70"
+                        <TextBlock Margin="0 48 0 0" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity=".60"
                                    Text="{DynamicResource NOTIFICATION_PAGE_NO_OLDER_NOTIFICATIONS}">
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignCaptionTextBlock}">
