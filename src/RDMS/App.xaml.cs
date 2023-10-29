@@ -34,16 +34,38 @@ namespace RDMS
         public IServiceProvider? Services { get; private set; }
 
         /// <summary>
+        /// Gets or sets the mutex instance.
+        /// </summary>
+        public Mutex? Mutex { get; set; }
+
+        /// <summary>
         /// Initializes the Application.
         /// </summary>
         public App()
         {
+            VerifyMutexArea();
+
             ConfigureLogging();
             ConfigureServices();
 
             InitializeComponent();
 
             LoadLocalizationResources();
+        }
+
+        /// <summary>
+        /// Verify the Mutex area.
+        /// </summary>
+        private void VerifyMutexArea()
+        {
+            bool result = false;
+            Mutex = new Mutex(true, "RDMS_DEVCON_RUNNING", out result);
+
+            if (!result)
+            {
+                MessageBox.Show("An instance of the application already exists.", "RDMS", MessageBoxButton.OK, MessageBoxImage.Error);
+                Environment.Exit(0);
+            }
         }
 
         /// <summary>
