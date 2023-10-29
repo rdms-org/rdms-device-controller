@@ -182,7 +182,7 @@
             </Border>
 
             <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" Opacity=".50" Text="{DynamicResource MANAGER_PAGE_CAUTION}" />
+                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" Opacity=".30" Text="{DynamicResource MANAGER_PAGE_CAUTION}" />
             </StackPanel>
         </Grid>
     </Grid>
