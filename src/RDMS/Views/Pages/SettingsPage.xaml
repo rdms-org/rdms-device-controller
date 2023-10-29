@@ -1,0 +1,150 @@
+﻿<Page x:Class="RDMS.Views.Pages.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RDMS.Views.Pages"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:behaviors="clr-namespace:RDMS.Behaviors"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SettingsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="24 24 24 20">
+            <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0" Padding="0" Opacity=".70" Text="{DynamicResource SETTINGS_PAGE_TITLE}" />
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" materialDesign:ScrollViewerAssist.ShowSeparators="True">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Border Margin="18 0 18 6" Padding="0"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="SettingsOutline"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_GENERAL_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_GENERAL_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="18 0 18 6" Padding="0"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="Server"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_API_SERVER_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="18 0 18 6" Padding="0"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="ChartBar"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_LOGGING_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_LOGGING_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="18 0 18 6" Padding="0"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="MagnifyScan"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INSPECTOR_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+
+                    <Border Margin="18 0 18 18" Padding="0"
+                        Background="{DynamicResource AldiemesBackground}" BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16"
+                        materialDesign:ElevationAssist.Elevation="Dp0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                        </Border.Effect>
+
+                        <Expander Background="Transparent" HorizontalAlignment="Stretch" ClipToBounds="True"
+                              materialDesign:ExpanderAssist.HorizontalHeaderPadding="16 18 16 18">
+                            <Expander.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon VerticalAlignment="Center" Width="24" Height="24" Opacity=".80" Kind="InfoOutline"/>
+                                    <StackPanel Orientation="Vertical" Margin="14 0 0 0" VerticalAlignment="Center">
+                                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Margin="0" Padding="0" Opacity=".80" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="14" Text="{DynamicResource SETTINGS_PAGE_INFO_HEADER}" />
+                                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 1 0 0" Padding="0" Opacity=".50" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" Text="{DynamicResource SETTINGS_PAGE_INFO_DESC}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander.Header>
+                            <StackPanel Orientation="Vertical" Margin="24 8 24 16">
+                                <TextBlock Text="Your Content" />
+                            </StackPanel>
+                        </Expander>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

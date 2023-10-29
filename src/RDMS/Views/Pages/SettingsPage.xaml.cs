@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace RDMS.Views.Pages
 {
     /// <summary>
-    /// ReportPage.xaml에 대한 상호 작용 논리
+    /// SettingsPage.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class ReportPage : Page
+    public partial class SettingsPage : Page
     {
-        public ReportPage()
+        public SettingsPage()
         {
             InitializeComponent();
-            DataContext = App.Current.Services?.GetService(typeof(ReportViewModel));
+            DataContext = App.Current.Services?.GetService(typeof(SettingsViewModel));
         }
     }
 }

@@ -19,7 +19,8 @@ namespace RDMS.ViewModels
         Status,
         Schedule,
         Report,
-        Manager
+        Manager,
+        Settings
     }
 
     public class ShellViewModel : ViewModelBase
@@ -44,12 +45,12 @@ namespace RDMS.ViewModels
             }
         }
 
-        private bool _isDialogOpen = false;
+        private bool _isBusy = false;
 
-        public bool IsDialogOpen
+        public bool IsBusy
         {
-            get => _isDialogOpen;
-            set => SetProperty(ref _isDialogOpen, value);
+            get => _isBusy;
+            set => SetProperty(ref _isBusy, value);
         }
 
         public ShellViewModel() 
@@ -69,6 +70,12 @@ namespace RDMS.ViewModels
             WeakReferenceMessenger.Default.Register<NavigationMessage>(this, (recipient, message) =>
             {
                 NavigationSource = message.Value;
+            });
+
+            // Subscribes the messenger to get busy indicator messages.
+            WeakReferenceMessenger.Default.Register<BusyMessage>(this, (recipient, message) =>
+            {
+                IsBusy = message.Value;
             });
         }
 
@@ -92,6 +99,9 @@ namespace RDMS.ViewModels
                     break;
                 case NavigationTab.Manager:
                     source = "./Views/Pages/ManagerPage.xaml";
+                    break;
+                case NavigationTab.Settings:
+                    source = "./Views/Pages/SettingsPage.xaml";
                     break;
                 default:
                     source = "./Views/Pages/AlertPage.xaml";

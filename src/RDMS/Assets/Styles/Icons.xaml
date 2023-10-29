@@ -46,8 +46,8 @@
 
     <DrawingImage x:Key="WindowMinimizeIcon">
         <DrawingImage.Drawing>
-            <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
-                <GeometryDrawing Brush="{DynamicResource AldiemesForegroundLight}" Geometry="F1 M24,24z M0,0z M20,14L4,14 4,10 20,10" />
+            <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+                <GeometryDrawing Brush="{DynamicResource AldiemesForegroundLight}" Geometry="F1 M512,512z M0,0z M32,416C14.3,416 0,430.3 0,448 0,465.7 14.3,480 32,480L480,480C497.7,480 512,465.7 512,448 512,430.3 497.7,416 480,416L32,416z" />
             </DrawingGroup>
         </DrawingImage.Drawing>
     </DrawingImage>

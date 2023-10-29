@@ -1,6 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    <!--Identifier-->
+    <system:String x:Key="IDENTIFIER">en-US</system:String>
+
     <!--Common-->
     <system:String x:Key="COMMON_EXPLORE">...</system:String>
     <system:String x:Key="COMMON_GO_BACK">Back</system:String>
@@ -20,4 +23,62 @@
     <system:String x:Key="SHELL_SIDENAV_REPORT">Report</system:String>
     <system:String x:Key="SHELL_SIDENAV_MANAGER">Manager</system:String>
     <system:String x:Key="SHELL_SIDENAV_SETTINGS">Settings</system:String>
+    <system:String x:Key="SHELL_BUSY_INDICATOR_MESSAGE">Processing request</system:String>
+
+    <!--Alert-->
+    <system:String x:Key="ALERT_PAGE_TITLE">Alert</system:String>
+
+    <!--Notification-->
+    <system:String x:Key="NOTIFICATION_PAGE_TITLE">Notice</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_NO_OLDER_NOTIFICATIONS">No older notifications</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_IS_READ">Is read</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_SENDER">Sender</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_TIMESTAMP">Timestamp</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_TITLE_HEADER">Title</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_VIEW">View</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_REMOVE">Remove</system:String>
+    <system:String x:Key="NOTIFICATION_PAGE_REMOVE_ALL">Remove all</system:String>
+
+    <!--Status-->
+    <system:String x:Key="STATUS_PAGE_TITLE">Status</system:String>
+    <system:String x:Key="STATUS_PAGE_MODE_HEADER">MODE</system:String>
+    <system:String x:Key="STATUS_PAGE_DEVICE_NAME_HEADER">DEVICE</system:String>
+    <system:String x:Key="STATUS_PAGE_STATUS_HEADER">STATUS</system:String>
+
+    <!--Schedule-->
+    <system:String x:Key="SCHEDULE_PAGE_TITLE">Schedule</system:String>
+    <system:String x:Key="SCHEDULE_PAGE_LIST_HEADER">TO-DO List</system:String>
+    <system:String x:Key="SCHEDULE_PAGE_LIST_NO_OLDER_NOTIFICATIONS">No any TO-DOs</system:String>
+
+    <!--Report-->
+    <system:String x:Key="REPORT_PAGE_TITLE">Report</system:String>
+    <system:String x:Key="REPORT_PAGE_APP_LOG_HEADER">APPLICATION LOG</system:String>
+    <system:String x:Key="REPORT_PAGE_DEVICE_LOG_HEADER">DEVICE LOG</system:String>
+    <system:String x:Key="REPORT_PAGE_VIEW_MORE_HEADER">View More</system:String>
+
+    <!--Manager-->
+    <system:String x:Key="MANAGER_PAGE_TITLE">Manager</system:String>
+    <system:String x:Key="MANAGER_PAGE_START">START</system:String>
+    <system:String x:Key="MANAGER_PAGE_ADD_DEVICE_HEADER">Add Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_ADD_DEVICE_DESC">Register this device with the management server.</system:String>
+    <system:String x:Key="MANAGER_PAGE_REMOVE_DEVICE_HEADER">Remove Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_REMOVE_DEVICE_DESC">Remove this device from the control of the current management server.</system:String>
+    <system:String x:Key="MANAGER_PAGE_RENT_DEVICE_HEADER">Rent Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_RENT_DEVICE_DESC">Change this device's operating mode to rental mode.</system:String>
+    <system:String x:Key="MANAGER_PAGE_RETURN_DEVICE_HEADER">Return Device</system:String>
+    <system:String x:Key="MANAGER_PAGE_RETURN_DEVICE_DESC">Change this device's operating mode to maintenance mode.</system:String>
+    <system:String x:Key="MANAGER_PAGE_CAUTION">※ You must select the same action that you selected on the Manager Web.</system:String>
+
+    <!--Settings-->
+    <system:String x:Key="SETTINGS_PAGE_TITLE">Settings</system:String>
+    <system:String x:Key="SETTINGS_PAGE_GENERAL_HEADER">General</system:String>
+    <system:String x:Key="SETTINGS_PAGE_GENERAL_DESC">User changeable options</system:String>
+    <system:String x:Key="SETTINGS_PAGE_API_SERVER_HEADER">Management Server</system:String>
+    <system:String x:Key="SETTINGS_PAGE_API_SERVER_DESC">Server address, Alternate server address</system:String>
+    <system:String x:Key="SETTINGS_PAGE_LOGGING_HEADER">Logging</system:String>
+    <system:String x:Key="SETTINGS_PAGE_LOGGING_DESC">Targets, Logging interval, Reporting interval</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INSPECTOR_HEADER">Inspector</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INSPECTOR_DESC">Basic inspection targets, Ignores</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INFO_HEADER">Information</system:String>
+    <system:String x:Key="SETTINGS_PAGE_INFO_DESC">Application information, Open-source information</system:String>
 </ResourceDictionary>

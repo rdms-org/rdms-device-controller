@@ -4,11 +4,186 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RDMS.Views.Pages"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:behaviors="clr-namespace:RDMS.Behaviors"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ManagerPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="24 24 24 20">
+            <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0" Padding="0" Opacity=".70" Text="{DynamicResource MANAGER_PAGE_TITLE}" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="20 0 20 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" Grid.Column="0" Margin="0 0 10 10" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
+
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="ServerPlusOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_ADD_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_ADD_DEVICE_DESC}"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="1" Margin="0 0 0 10" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
+
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="ServerRemoveOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_REMOVE_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_REMOVE_DEVICE_DESC}"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="0" Margin="0 0 10 0" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
+
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="LockOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RENT_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RENT_DEVICE_DESC}"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="1" Margin="0 0 0 0" 
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
+
+                <Grid Margin="20 20 16 16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical">
+                        <materialDesign:PackIcon Width="24" Height="24" Opacity=".80" Kind="LockOpenVariantOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignSubtitle1TextBlock}" Margin="0 12 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".80" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RETURN_DEVICE_HEADER}"/>
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 2 0 0" VerticalAlignment="Center"
+                                   TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Opacity=".50" TextWrapping="Wrap"
+                                   Text="{DynamicResource MANAGER_PAGE_RETURN_DEVICE_DESC}"/>
+                    </StackPanel>
+
+                    <Button Grid.Row="1" Style="{StaticResource MaterialDesignFlatButton}"
+                            BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1"
+                            HorizontalAlignment="Right" Height="44"
+                            materialDesign:ButtonAssist.CornerRadius="22">
+                        <StackPanel Orientation="Horizontal" Margin="4 0 4 0">
+                            <materialDesign:PackIcon VerticalAlignment="Center" Width="16" Height="16" Opacity=".80" Kind="ConsoleLine" />
+                            <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" VerticalAlignment="Center"
+                                       TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" FontSize="12" FontWeight="Bold"
+                                       Text="{DynamicResource MANAGER_PAGE_START}"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="0 16 0 0" HorizontalAlignment="Center" Opacity=".30" Text="{DynamicResource MANAGER_PAGE_CAUTION}" />
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
