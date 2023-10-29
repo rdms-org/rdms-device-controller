@@ -43,7 +43,7 @@
     <system:String x:Key="STATUS_PAGE_TITLE">상태</system:String>
     <system:String x:Key="STATUS_PAGE_MODE_HEADER">모드</system:String>
     <system:String x:Key="STATUS_PAGE_DEVICE_NAME_HEADER">기기</system:String>
-    <system:String x:Key="STATUS_PAGE_LOG_REPORT_HEADER">보고서</system:String>
+    <system:String x:Key="STATUS_PAGE_STATUS_HEADER">상태</system:String>
 
     <!--Schedule-->
     <system:String x:Key="SCHEDULE_PAGE_TITLE">일정</system:String>
@@ -52,6 +52,9 @@
 
     <!--Report-->
     <system:String x:Key="REPORT_PAGE_TITLE">보고서</system:String>
+    <system:String x:Key="REPORT_PAGE_APP_LOG_HEADER">애플리케이션 로그</system:String>
+    <system:String x:Key="REPORT_PAGE_DEVICE_LOG_HEADER">기기 로그</system:String>
+    <system:String x:Key="REPORT_PAGE_VIEW_MORE_HEADER">자세히 보기</system:String>
 
     <!--Manager-->
     <system:String x:Key="MANAGER_PAGE_TITLE">관리</system:String>

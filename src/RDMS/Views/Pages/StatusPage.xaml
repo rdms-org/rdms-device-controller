@@ -102,7 +102,8 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
-                        <TextBlock Style="{StaticResource MaterialDesignBody2TextBlock}" Opacity=".60" Text="보고서" />
+                        <materialDesign:PackIcon VerticalAlignment="Center" Width="14" Height="14" Opacity=".70" Kind="Subtasks" />
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Opacity=".60" Text="{DynamicResource STATUS_PAGE_STATUS_HEADER}" />
                     </StackPanel>
 
                     <Grid Grid.Row="1">

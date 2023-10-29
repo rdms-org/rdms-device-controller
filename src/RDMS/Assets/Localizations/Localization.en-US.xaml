@@ -43,7 +43,7 @@
     <system:String x:Key="STATUS_PAGE_TITLE">Status</system:String>
     <system:String x:Key="STATUS_PAGE_MODE_HEADER">MODE</system:String>
     <system:String x:Key="STATUS_PAGE_DEVICE_NAME_HEADER">DEVICE</system:String>
-    <system:String x:Key="STATUS_PAGE_LOG_REPORT_HEADER">REPORT</system:String>
+    <system:String x:Key="STATUS_PAGE_STATUS_HEADER">STATUS</system:String>
 
     <!--Schedule-->
     <system:String x:Key="SCHEDULE_PAGE_TITLE">Schedule</system:String>
@@ -52,6 +52,9 @@
 
     <!--Report-->
     <system:String x:Key="REPORT_PAGE_TITLE">Report</system:String>
+    <system:String x:Key="REPORT_PAGE_APP_LOG_HEADER">APPLICATION LOG</system:String>
+    <system:String x:Key="REPORT_PAGE_DEVICE_LOG_HEADER">DEVICE LOG</system:String>
+    <system:String x:Key="REPORT_PAGE_VIEW_MORE_HEADER">View More</system:String>
 
     <!--Manager-->
     <system:String x:Key="MANAGER_PAGE_TITLE">Manager</system:String>

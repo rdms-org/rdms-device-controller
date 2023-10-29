@@ -21,8 +21,75 @@
             <TextBlock Style="{StaticResource MaterialDesignHeadline5TextBlock}" Margin="0" Padding="0" Opacity=".70" Text="{DynamicResource REPORT_PAGE_TITLE}" />
         </StackPanel>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="18 0 18 18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            
+            <Border Grid.Row="0" Margin="0 0 0 5"
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
 
+                <Grid Margin="24">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <materialDesign:PackIcon VerticalAlignment="Center" Width="14" Height="14" Opacity=".70" Kind="ApplicationBracesOutline" />
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Opacity=".60" Text="{DynamicResource REPORT_PAGE_APP_LOG_HEADER}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock VerticalAlignment="Center" Opacity=".50">
+                            <Hyperlink Style="{StaticResource MaterialDesignCaptionHyperlink}">
+                                <TextBlock Text="{DynamicResource REPORT_PAGE_VIEW_MORE_HEADER}"/>
+                            </Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <Grid Grid.Row="1">
+                        <Separator Background="{DynamicResource AldiemesDividerLight}" Margin="0 16 0 16" VerticalAlignment="Top"/>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Margin="0 5 0 0"
+                    Background="{DynamicResource AldiemesBackground}"
+                    BorderBrush="{DynamicResource AldiemesDividerLight}" BorderThickness="1" CornerRadius="16">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity=".07" />
+                </Border.Effect>
+
+                <Grid Margin="24">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <materialDesign:PackIcon VerticalAlignment="Center" Width="14" Height="14" Opacity=".70" Kind="Devices" />
+                        <TextBlock Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="4 0 0 0" Opacity=".60" Text="{DynamicResource REPORT_PAGE_DEVICE_LOG_HEADER}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock VerticalAlignment="Center" Opacity=".50">
+                            <Hyperlink Style="{StaticResource MaterialDesignCaptionHyperlink}">
+                                <TextBlock Text="{DynamicResource REPORT_PAGE_VIEW_MORE_HEADER}"/>
+                            </Hyperlink>
+                        </TextBlock>
+                    </StackPanel>
+
+                    <Grid Grid.Row="1">
+                        <Separator Background="{DynamicResource AldiemesDividerLight}" Margin="0 16 0 16" VerticalAlignment="Top"/>
+                    </Grid>
+                </Grid>
+            </Border>
         </Grid>
     </Grid>
 </Page>
