@@ -19,8 +19,23 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <hardcodet:TaskbarIcon x:Name="TrayIcon" IconSource="/Assets/RDMS.ico" ToolTipText="RDMS" MenuActivation="LeftOrRightClick" PopupActivation="DoubleClick">
-            
+        <hardcodet:TaskbarIcon x:Name="TrayIcon" IconSource="/Assets/RDMS.ico" ToolTipText="RDMS" MenuActivation="RightClick">
+            <hardcodet:TaskbarIcon.ContextMenu>
+                <ContextMenu MinWidth="200">
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_OPEN}"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_NOTIFICATION}"/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_STATUS}"/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_SCHEDULE}"/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_REPORT}"/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_MANAGER}"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_SETTINGS}"/>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_INFO}"/>
+                    <MenuItem Header="{DynamicResource SHELL_TASKBAR_MENU_EXIT}"/>
+                </ContextMenu>
+            </hardcodet:TaskbarIcon.ContextMenu>
         </hardcodet:TaskbarIcon>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">

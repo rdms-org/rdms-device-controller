@@ -23,7 +23,15 @@
     <system:String x:Key="SHELL_SIDENAV_REPORT">Report</system:String>
     <system:String x:Key="SHELL_SIDENAV_MANAGER">Manager</system:String>
     <system:String x:Key="SHELL_SIDENAV_SETTINGS">Settings</system:String>
-    <system:String x:Key="SHELL_BUSY_INDICATOR_MESSAGE">Processing request</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_OPEN">Open</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_NOTIFICATION">Notification</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_STATUS">Status</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_SCHEDULE">Schedules</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_REPORT">Report</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_MANAGER">Manager</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_SETTINGS">Settings</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_INFO">Info</system:String>
+    <system:String x:Key="SHELL_TASKBAR_MENU_EXIT">Exit</system:String>
 
     <!--Alert-->
     <system:String x:Key="ALERT_PAGE_TITLE">Alert</system:String>
