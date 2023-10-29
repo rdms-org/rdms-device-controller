@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace RDMS.Views
 {
@@ -32,7 +33,10 @@ namespace RDMS.Views
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             // Note: Clean up notifyicon(would otherwise stay open until application finishes).
-            TrayIcon.Dispose();
+            App.Current.Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(() =>
+            {
+                TrayIcon.Dispose();
+            }));
 
             base.OnClosing(e);
         }
