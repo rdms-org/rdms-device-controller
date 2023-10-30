@@ -11,7 +11,7 @@
 </p>
 
 ## Usage
-[See the documentation](../docs/USER_GUIDE.md) for instructions on how to use it.
+[See the documentation](./docs/USER_GUIDE.md) for instructions on how to use it.
 
 ## Build
 ### Requirements
@@ -33,4 +33,4 @@ Set-ExecutionPolicy Unrestricted
 ## License
 The contents are freely available under the [MIT License](http://opensource.org/licenses/MIT).
 
-The licenses of third-party libraries can be found [here](../docs/OPENSOURCES.md).
+The licenses of third-party libraries can be found [here](./docs/OPENSOURCES.md).
