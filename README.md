@@ -10,6 +10,9 @@
     </p>
 </p>
 
+## Usage
+[See the documentation](../docs/USER_GUIDE.md) for instructions on how to use it.
+
 ## Build
 ### Requirements
  * __OS__ : Windows 10 or higher version (server edition is also available!)
@@ -29,3 +32,5 @@ Set-ExecutionPolicy Unrestricted
 
 ## License
 The contents are freely available under the [MIT License](http://opensource.org/licenses/MIT).
+
+The licenses of third-party libraries can be found [here](../docs/OPENSOURCES.md).
